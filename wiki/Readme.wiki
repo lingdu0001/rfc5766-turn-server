@@ -1,5 +1,4 @@
 #labels Featured
-
 TURN(3 Jan 2013)	
 
 == GENERAL INFORMATION ==
@@ -192,7 +191,7 @@ It sends a STUN request and shows the	reply information.
 
 == LOGS ==
 
-The *TURN Server* makes efforts to create a log file turnserver_<pid>.log 
+The *TURN Server* makes efforts to create a log file {{{turnserver_<pid>.log }}}
 in the following directories:
 
 	* /var/log
@@ -205,5 +204,3 @@ If all efforts failed (due to the system permission settings) then all
 log messages are sent only to the standard output of the process.
 
 							TURN(3 Jan 2013)
-
-
