@@ -220,8 +220,8 @@ After the proper installation, the command:
 	
 will give you the same man page.
 
-In the docs/html subdirectory of the original archive tree, you will find the client library 
-reference. 
+In the docs/html subdirectory of the original archive tree, you will find the client library reference. After the installation, it will be placed in 
+PREFIX/share/doc/turnserver/html.
  
 == LOGS ==
 
@@ -238,7 +238,5 @@ If all efforts failed (due to the system permission settings) then all
 log messages are sent only to the standard output of the process.
 
 							TURN(22 Jan 2013)
-
-
 
 
