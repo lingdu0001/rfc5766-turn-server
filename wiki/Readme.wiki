@@ -1,6 +1,5 @@
 #labels Featured
-
-TURN(31 Mar 2013)	
+TURN(4 Apr 2013)	
 
 == GENERAL INFORMATION ==
 
@@ -26,7 +25,7 @@ TURN(31 Mar 2013)
 }}}
  *	_*peer*_: a simple stateless UDP-only "echo" server, to be used as the final server in relay pattern ("_peer_"). For every incoming UDP packet, it simply echoes it back.  (this program is provided for the testing purposes only !)	When the test clients are communicating in the	client-to-client manner, this component	is not needed. The compiled binary image of this program is located in examples/bin/ subdirectory.
  *	_*stunclient*_: a simple STUN	client example.	 The  compiled	binary image of this program is located in examples/bin/ subdirectory.
- *	_*rfc5769check*_: a utility that checks the correctness of the STUN/TURN protocol implementation. This program will perform several checks and print the result on the screen. It will exit with 0 status if everything is OK, and with (-1) if there was an error in the protocol implementation.  
+ *	_*rfc5769check*_: a utility that checks the correctness of the STUN/TURN protocol implementation. This program will perform several checks and print the result on the screen. It will exit with 0 status if everything is OK, and with (-1) if there was an error in the protocol implementation.   
 
        In the "examples/scripts"	subdirectory, you will find the	 examples  of  command
        lines to	be used	to run the programs. The scripts are meant to be run from examples/ subdirectory:
@@ -50,9 +49,10 @@ TURN(31 Mar 2013)
    * *-v,* *--verbose* Verbose.
    * *-o,* *--daemon* Run server process as daemon.
    * *-f,* *--fingerprint* Use fingerprints in the TURN messages. If an incoming request contains fingerprint, then TURN server will always add fingerprints to the messages in this session, regardless of the per-server setting.
-   * *-a,* *--lt-cred-mech* Use long-term credential mechanism. By default, no credential mechanism is used - any user is allowed.
-   * *-z,* *--no-auth* Do not use any credential mechanism, allow anonymous access. Opposite to *-a* option.
-   * *--use-auth-secret* Flag that sets a special authorization option that is based upon authentication secret. This feature purpose is to support "TURN Server REST API" as described in TURNServerRESTAPI.pdf in the docs. 
+   * *-a,* *--lt-cred-mech* Use long-term credentials mechanism. This option can be used with either flat file user database or PostgreSQL DB or MySQL DB for user keys storage.
+   * *-A,* *--st-cred-mech* Use short-term credentials mechanism. This option requires a PostgreSQL or MySQL DB for short term passwords storage.
+   * *-z,* *--no-auth* Do not use any credentials mechanism, allow anonymous access. Opposite to *-a* and *-A* options.
+   * *--use-auth-secret* Flag that sets a special authorization option that is based upon authentication secret. This feature purpose is to support "TURN Server REST API" as described in TURNServerRESTAPI.pdf in the docs. This option can be used with long-term credentials mechanism only - it does not make much sense with the short-term mechanism. 
    * *--no-udp* Do not start 'plain' UDP listeners.
    * *--no-tcp* Do not start 'plain'TCP listeners.
    * *--no-tls* Do not start TLS listeners.
@@ -76,32 +76,35 @@ TURN(31 Mar 2013)
 ====User database settings:====
 
    * *-b,* *--userdb*
-	      'Dynamic'	user database file name	(default  -  turnuserdb.conf).
+	      'Dynamic'	user database file name	(default  -  turnuserdb.conf),
+			for long-term credentials mechanism only.
 	      This  user  database  is	being  dynamically  checked  while the
 	      _turnserver_ is working, and the  user  accounts  can  be  changed
 	      dynamically by editing the file.
    * *-e,* *--sql-userdb*
-   		  User database connection string for PostgreSQL. You can either use 
-		flat file user database (-b option) or PostgreSQL database (-e option) or
-		MySQL database (-M option).
-		The connection string format (for example) is like this:
-		 
-		"host=localhost dbname=turn user=turn password=turn connect_timeout=30" (for 8.x Postgres).
-		
-		Or:
-		
-		"postgresql://username:password@hostname:port/databasename" (for 9.x Postgres). 
+   		  User database connection string for PostgreSQL. 
+		This database can be used for long-term and short-term credentials mechanisms,
+	    and it can store the secret value for secret-based timed authentication in TURN RESP API.
+		The connection string format is like that:
+{{{
+"host=<host> dbname=<dbname> user=<db-user> password=<db-user-password> connect_timeout=30" 
+}}}
+(for 8.x Postgres), or:
+{{{
+"postgresql://username:password@hostname:port/databasename" 
+}}} 
+(for 9.x Postgres).
 		See the INSTALL file for more explanations and examples.
 		
 		Also, see http://www.PostgreSQL.org for full PostgreSQL documentation.
    * *-M,* *--mysql-userdb*
-   		  User database connection string for MySQL. You can either use 
-		flat file user database (-b option) or PostgreSQL database (-e option) or
-		MySQL database (-M option).
+   		  User database connection string for MySQL. 
+		This database can be used for long-term and short-term credentials mechanisms,
+	    and it can store the secret value for secret-based timed authentication in TURN RESP API.
 		The connection string format (for example) is like this:
-		 
-		"host=localhost dbname=turn user=turn password=turn".
-		
+{{{
+"host=<host> dbname=<dbname> user=<db-user> password=<db-user-password>".
+}}}		
 		See the INSTALL file for more explanations and examples.
 		
 		Also, see http://www.mysql.org for full MySQL documentation.
@@ -120,8 +123,8 @@ TURN(31 Mar 2013)
     *   *-m,* *--relay-threads* Number of	extra threads to handle	the  established  connections. By  default, everything in handled in single thread (the default number of	extra threads is 0).
     *   *--min-port* Lower bound of the UDP port range	for  relay  endpoints  allocation.  Default value is 49152, according to RFC 5766.
     *   *--max-port* Upper  bound  of	the UDP	port range for relay endpoints allocation.  Default value is 65535, according to RFC 5766.
-    *   *-u,* *--user* User account, in the column-separated form 'username:key'. The key is either the	user password, or the key is generated by _turnadmin_ command. In the second case, the key  must be  prepended with  '0x'  symbols. The key is calculated over the user name, the realm, and the user password.
-    *   *-r,* *--realm* Realm to be used for all users.
+    *   *-u,* *--user* Long-term credentials user account, in the column-separated form 'username:key'. Multiple user accounts can be used in the command line. The key is either the	user password, or the key is generated by _turnadmin_ command. In the second case, the key  must be  prepended with  '0x'  symbols. The key is calculated over the user name, the realm, and the user password.
+    *   *-r,* *--realm* Realm to be used for all users, with long term credentials only.
     *   *-q,* *--user-quota* Per-user allocation quota: how many concurrent allocations a user can create.
     *   *-Q,* *--total-quota* Total allocations quota: global limit on concurrent allocations.
     *   *--static-auth-secret* Static authentication secret value (a string). If not set, then the turn server will try to use the 'dynamic' value in turn_secret table in user database (if present). The database-stored value can be changed on-the-fly by a separate program, so this is why that other mode is 'dynamic'.
@@ -140,9 +143,11 @@ TURN(31 Mar 2013)
 }}}
 ====Commands:====
 
- *  *-k,* *--key* Generate key for a user.
- * *-a,* *--add* Add or update a user.
- * *-d,* *--delete* Delete a user.
+ *  *-k,* *--key* Generate key for a long-term credentials mechanism user.
+ * *-a,* *--add* Add or update a long-term user.
+ * *-A,* *--add-st* Add or update a short-term credentials mechanism user.
+ * *-d,* *--delete* Delete a long-term user.
+ * *-D,* *--delete-st* Delete a short-term user.
 
  ====Options:====
 
@@ -190,6 +195,7 @@ TURN(31 Mar 2013)
  *      *-c*     Do not create rtcp connections.
  *      *-x*     Request IPv6 relayed address (RFC6156).
  *      *-g*     Set DONT_FRAGMENT	parameter in TURN requests.
+ *      *-A*     Use short-term credentials mechanism for authentication. By default, the program uses the long-term credentials mechanism if authentication is required.
 
 ====Options:====
 
@@ -206,7 +212,7 @@ TURN(31 Mar 2013)
  *		*-z*     Per-session packet interval in milliseconds (default is 20 ms).
  *		*-u*     STUN/TURN username.
  *		*-w*     STUN/TURN user password.
- *		*-W*     TURN REST API secret.
+ *		*-W*     TURN REST API secret. Is not compatible with -A flag.
 
        See the _uclient_ usage examples	in the "examples/scripts" directory.
 
@@ -221,7 +227,7 @@ Peer a simple UDP-only echo backend server. This application is used for the tes
 
  *      *-p*     Listening	UDP port (Default: 3480).
  *      *-d*     Listening	interface device (optional)
- *      *-L*     Listening	address	of _peer_	server. Multiple listening addresses can be used, IPv4 and IPv6.
+ *      *-L*     Listening	address	of _peer_	server. Multiple listening addresses can be used, IPv4 and IPv6. If no listener address(es) defined, then it listens on all IPv4 and IPv6 addresses.
  *      *-v*     Verbose
 
 === stunclient is a basic STUN client ===
@@ -241,7 +247,7 @@ It tests the protocol implementation against the test vectors predefined in RFC 
   
 ====Usage:====  
 {{{
-$ rfc5769check
+$ examples/bin/rfc5769check
 }}}
 
 == LIBRARIES ==
@@ -284,7 +290,47 @@ in the following directories:
 If all efforts failed (due to the system permission settings) then all 
 log messages are sent only to the standard output of the process.
 
-							TURN(31 Mar 2013)
+This behavior can be controlled by --sql-log and --no-stdout-log options (see turnserver help).
+
+== CLUSTERS ==
+
+TURN Server can be a part of the cluster installation. But, to support the "even port" functionality 
+(RTP/RTCP streams pairs) the client requests from a particular IP must be delivered to the same 
+TURN Server instance, so it requires some networking setup massaging for the cluster. The reason is that 
+the RTP and RTCP relaying endpoints must be allocated on the same relay IP. It would be possible 
+to design a scheme with the application-level requests forwarding (and we may do that later) but 
+it would affect the performance.
+
+== FILES ==
+
+/etc/turnserver.conf
+
+/etc/turnuserdb.conf
+
+/usr/local/etc/turnserver.conf
+
+/usr/local/etc/turnuserdb.conf
+
+== STANDARDS ==
+
+new STUN RFC 5389
+
+TURN RFC 5766
+
+TURN-TCP extention RFC 6062
+ 
+TURN IPv6 extention RFC 6156
+
+STUN/TURN test vectors RFC 5769
+
+STUN NAT behavior discovery RFC 5780
+
+== AUTHORS ==
+
+Oleg Moskalenko <mom040267@gmail.com>
+
+
+							TURN(4 Apr 2013)
 
 
 
