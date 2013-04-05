@@ -1,5 +1,6 @@
 #labels Featured
-TURN(4 Apr 2013)	
+
+TURN(5 Apr 2013)	
 
 == GENERAL INFORMATION ==
 
@@ -87,15 +88,15 @@ TURN(4 Apr 2013)
 	    and it can store the secret value for secret-based timed authentication in TURN RESP API.
 		The connection string format is like that:
 {{{
-"host=<host> dbname=<dbname> user=<db-user> password=<db-user-password> connect_timeout=30" 
+"host=<host> dbname=<dbname> user=<db-user> password=<db-user-password> connect_timeout=<seconds>"
 }}}
 (for 8.x Postgres), or:
 {{{
-"postgresql://username:password@hostname:port/databasename" 
-}}} 
-(for 9.x Postgres).
-		See the INSTALL file for more explanations and examples.
-		
+"postgresql://username:password@hostname:port/databasename"
+}}}
+ (for 9.x Postgres). 
+	See the INSTALL file for more explanations and examples.
+
 		Also, see http://www.PostgreSQL.org for full PostgreSQL documentation.
    * *-M,* *--mysql-userdb*
    		  User database connection string for MySQL. 
@@ -103,8 +104,8 @@ TURN(4 Apr 2013)
 	    and it can store the secret value for secret-based timed authentication in TURN RESP API.
 		The connection string format (for example) is like this:
 {{{
-"host=<host> dbname=<dbname> user=<db-user> password=<db-user-password>".
-}}}		
+"host=<host> dbname=<dbname> user=<db-user> password=<db-user-password> connect_timeout=<seconds>".
+}}}
 		See the INSTALL file for more explanations and examples.
 		
 		Also, see http://www.mysql.org for full MySQL documentation.
@@ -330,7 +331,7 @@ STUN NAT behavior discovery RFC 5780
 Oleg Moskalenko <mom040267@gmail.com>
 
 
-							TURN(4 Apr 2013)
+							TURN(5 Apr 2013)
 
 
 
