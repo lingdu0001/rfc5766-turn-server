@@ -1,5 +1,4 @@
 #labels Featured
-
 TURN(14 Apr 2013)	
 
 == GENERAL INFORMATION ==
@@ -148,9 +147,9 @@ TURN(14 Apr 2013)
  * *-D,* *--delete-st* Delete a short-term user.
  * *-l,* *--list* List all long-term users.
  * *-L,* *--list-st* List all short-term users.
- * *-s,* *--set-secret=<value>* Set secret in the database.
+ * *-s,* *--set-secret=...* Set secret in the database.
  * *-S,* *--show-secret* Show secret stored in database.
- * *-X,* *--delete-secret=<value>*	Delete a shared secret.
+ * *-X,* *--delete-secret=...*	Delete a shared secret.
  * *--delete-all-secrets*	Delete all shared secrets for REST API.
 
  ====Options:====
@@ -352,7 +351,5 @@ Oleg Moskalenko <mom040267@gmail.com>
 
 
 							TURN(14 Apr 2013)
-
-
 
 
