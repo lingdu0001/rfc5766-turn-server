@@ -1,0 +1,43 @@
+rfc5766-turn-server for Debian
+------------------------------
+
+1) If you system supports automatic start-up system daemon services, 
+then, to enable rfc5766-turn-server as an automatically started system 
+service, you have to:
+
+	a) Edit /etc/turnserver.conf file.
+
+	b) For user accounts settings, if using the turnserver 
+	with authentication: edit /etc/turnuserdb.conf 
+	file, or set up PostgreSQL or MySQL database for user accounts.
+	Use /usr/share/rfc5766-turn-server/schema.sql as database schema.
+
+	c) add whatever is necessary to enable start-up daemon for the /sbin/turnserver.
+     
+2) If you do not want the turnserver to be a system service, 
+   then you can start/stop it "manually", using the "turnserver" 
+   executable with appropriate options (see the documentation).
+   
+3) To create database schema, use schema in file /usr/share/rfc5766-turn-server/schema.sql.
+   
+4) For additional information, run:
+ 
+   $ man turnserver
+   $ man turnadmin
+   $ man turnutils
+
+5) By default, no TURN user accounts are created.  rfc5766-turn-server does not 
+recognise UNIX accounts and requires accounts to be defined in it's own config
+file.
+
+Traditional STUN doesn't require an account. For TURN relay
+purposes, several accounting options are possible:
+	  - anonymous access (the default option);
+	  - traditional long-term authentication mechanism (see RFC5766);
+	  - TURN REST API shared-secret-based long-term authentication mechanism
+	    (see TURN REST API docs);
+	  - short-term authentication mechanism (see RFC5766);
+
+Please see the README.* files for details.
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Sun, 28 Apr 2013 11:58:45 -0700
