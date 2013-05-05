@@ -6,6 +6,23 @@ Source: http://code.google.com/p/rfc5766-turn-server/
 Files: *
 Copyright: 2011-2013, Citrix Systems, Oleg Moskalenko <mom040267@gmail.com>
 License: BSD-RFC5766-TURN-SERVER-CITRIX
+Comment:
+ This is a BSD license.
+
+Files: src/server/ns_turn_khash.h
+Copyright: 2008, by Attractive Chaos <attractivechaos@aol.co.uk>
+License: MIT-HASH
+Comment:
+ This is an MIT license.
+
+Files: debian/*
+Copyright: 2012, Daniel Pocock <daniel@pocock.com.au>
+	   2013 Oleg Moskalenko <mom040267@gmail.com>
+License: GPL-3+
+Comment:
+ The GPL can be found in /usr/share/common-licenses/GPL-3
+
+License: BSD-RFC5766-TURN-SERVER-CITRIX
  /*
   * Copyright (C) 2011, 2012, 2013 Citrix Systems
   *
@@ -35,17 +52,10 @@ License: BSD-RFC5766-TURN-SERVER-CITRIX
   * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
   * SUCH DAMAGE.
   */
- .
 
-Files: debian/*
-Copyright: 2012, Daniel Pocock <daniel@pocock.com.au>
-	   2013 Oleg Moskalenko <mom040267@gmail.com>
 License: GPL-3+
-Comment:
  The GPL can be found in /usr/share/common-licenses/GPL-3
 
-Files: src/server/ns_turn_khash.h
-Copyright: 2008, by Attractive Chaos <attractivechaos@aol.co.uk>
 License: MIT-HASH
  /* The MIT License
   *
@@ -71,7 +81,3 @@ License: MIT-HASH
   * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
   * SOFTWARE.
  */
-
-License: GPL-3+
- The GPL can be found in /usr/share/common-licenses/GPL-3
-
