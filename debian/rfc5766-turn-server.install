@@ -1,5 +1,5 @@
-bin/turnserver sbin
-bin/turnadmin sbin
+bin/turnserver usr/bin
+bin/turnadmin usr/bin
 bin/turnutils_peer usr/bin
 bin/turnutils_rfc5769check usr/bin
 bin/turnutils_stunclient usr/bin

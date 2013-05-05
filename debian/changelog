@@ -1,4 +1,4 @@
-rfc5766-turn-server (1.8.3.6-1) unstable; urgency=low
+rfc5766-turn-server (1.8.3.7-1) unstable; urgency=low
 
   * Initial Debian release (Closes: #705064)
 

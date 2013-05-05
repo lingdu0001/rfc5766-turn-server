@@ -12,11 +12,11 @@
 # Author: Oleg Moskalenko <mom040267@gmail.com>
 
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
-PATH=/sbin:/usr/sbin:/bin:/usr/bin
+PATH=/usr/bin:/sbin:/usr/sbin:/bin
 DESC=rfc5766-turn-server             # RFC5766-TURN-SERVER
 NAME=rfc5766-turn-server             # TURN Server
 PROCNAME=turnserver                  # Binary name
-DAEMON=/sbin/turnserver
+DAEMON=/usr/bin/turnserver
 DAEMON_ARGS="-c /etc/turnserver.conf -o -v"             # Arguments to run the daemon with
 PIDFILE_DIR=/var/run
 PIDFILE=/var/run/$PROCNAME.pid
@@ -101,44 +101,51 @@ do_reload() {
 }
 
 case "$1" in
-  start)
-    [ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC " "$NAME"
-    do_start
-    case "$?" in
+    start)
+	[ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC " "$NAME"
+	
+	if test "$TURNSERVER_ENABLED" = 1; then
+	    do_start
+	    case "$?" in
 		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
 		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
-	esac
-  ;;
-  stop)
+	    esac
+	else
+            log_daemon_msg "rfc5766-turn-server disabled. \nSee /etc/default/rfc5766-turn-server for instructions on enabling"
+            log_end_msg 0
+            exit 0
+	fi
+	;;
+    stop)
 	[ "$VERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$NAME"
 	do_stop
 	case "$?" in
-		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
-		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+	    0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
+	    2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
 	esac
 	;;
-  status)
-       status_of_proc "$DAEMON" "$PROCNAME" && exit 0 || exit $?
-       ;;
-  restart|force-reload)
+    status)
+	status_of_proc "$DAEMON" "$PROCNAME" && exit 0 || exit $?
+	;;
+    restart|force-reload)
 	log_daemon_msg "Restarting $DESC" "$PROCNAME"
 	do_stop
 	case "$?" in
-	  0|1)
+	    0|1)
 		do_start
 		case "$?" in
-			0) log_end_msg 0 ;;
-			1) log_end_msg 1 ;; # Old process is still running
-			*) log_end_msg 1 ;; # Failed to start
+		    0) log_end_msg 0 ;;
+		    1) log_end_msg 1 ;; # Old process is still running
+		    *) log_end_msg 1 ;; # Failed to start
 		esac
 		;;
-	  *)
+	    *)
 	  	# Failed to stop
 		log_end_msg 1
 		;;
 	esac
 	;;
-  *)
+    *)
 	#echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
 	echo "Usage: $SCRIPTNAME {start|stop|status|restart|force-reload}" >&2
 	exit 3
