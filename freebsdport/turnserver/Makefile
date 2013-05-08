@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	1.8.3.7
+PORTVERSION=	1.8.3.8
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
@@ -16,7 +16,7 @@ LIB_DEPENDS=	ssl:${PORTSDIR}/security/openssl \
 
 SUB_FILES=      pkg-message
 
-MAN1=		turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_rfc5769check.1 turnutils_stunclient.1 turnutils_uclient.1 
+MAN1=		turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_rfc5769check.1 turnutils_stunclient.1 turnutils_uclient.1
 MANCOMPRESSED=	no
 
 USE_OPENSSL=	YES
