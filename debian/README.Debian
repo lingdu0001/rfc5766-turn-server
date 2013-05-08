@@ -17,7 +17,7 @@ requires long-term credentials and some extra stuff. To set the turnserver param
    executable with appropriate options (see the documentation).
    If you want the turnserver to be an automatically started system service, 
    then you have to uncomment line "TURNSERVER_ENABLED=1" in 
-   the /etc/defaults/rfc5766-turn-server file.
+   the /etc/default/rfc5766-turn-server file.
    
 3) To create database schema, use schema in file /usr/share/rfc5766-turn-server/schema.sql.
    
