@@ -8,6 +8,8 @@ lib/libturnclient.a
 etc/turnserver.conf.default
 etc/turnuserdb.conf.default
 share/turnserver/schema.sql
+share/turnserver/schema.userdb.redis
+share/turnserver/schema.stats.redis
 @dirrmtry share/turnserver
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turnserver.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turnuserdb.conf
@@ -39,8 +41,10 @@ share/turnserver/schema.sql
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_udp_client.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_psql.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_mysql.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_redis.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret_with_db_mysql.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret_with_db_redis.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_udp_client_with_secret.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_udp_client_short_term.sh

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	1.8.3.9
+PORTVERSION=	1.8.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
@@ -25,12 +25,13 @@ USE_RC_SUBR=	turnserver
 
 HAS_CONFIGURE=	YES
 
-OPTIONS_DEFINE=         MYSQL PGSQL
+OPTIONS_DEFINE=         MYSQL PGSQL REDIS
 
 MYSQL_DESC=        MySQL support for users database
 PGSQL_DESC=			PostgreSQL support for users database
+REDIS_DESC=			Redis support for user database and for status and statistics reporting
 
-OPTIONS_DEFAULT=        MYSQL PGSQL
+OPTIONS_DEFAULT=        MYSQL PGSQL REDIS
 
 .include <bsd.port.options.mk>
 
@@ -51,7 +52,10 @@ longtermsecure/secure_tcp_client_c2c_tcp_relay.sh longtermsecure/secure_tcp_clie
 longtermsecure/secure_tls_client_c2c_tcp_relay.sh longtermsecure/secure_tls_client.sh \
 longtermsecure/secure_udp_c2c.sh longtermsecure/secure_udp_client.sh \
 longtermsecuredb/secure_relay_with_db_psql.sh longtermsecuredb/secure_relay_with_db_mysql.sh \
-restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_mysql.sh restapi/secure_udp_client_with_secret.sh \
+longtermsecuredb/secure_relay_with_db_redis.sh \
+restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_mysql.sh \
+restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_redis.sh \
+restapi/secure_udp_client_with_secret.sh \
 shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh shorttermsecure/secure_udp_client_short_term.sh shorttermsecure/secure_relay_short_term_mech.sh
 
 CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread
@@ -70,6 +74,12 @@ LIB_DEPENDS+=    mysqlclient:${PORTSDIR}/databases/mysql55-client
 CONFIGURE_ENV+=	TURN_NO_MYSQL=1
 .endif
 
+.if ${PORT_OPTIONS:MREDIS}
+LIB_DEPENDS+=    hiredis:${PORTSDIR}/databases/hiredis/
+.else
+CONFIGURE_ENV+=	TURN_NO_HIREDIS=1
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/turnserver ${PREFIX}/bin/turnserver
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/turnadmin ${PREFIX}/bin/turnadmin
@@ -81,6 +91,8 @@ do-install:
 .endfor
 	${MKDIR} ${PREFIX}/share/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.sql ${PREFIX}/share/${PORTNAME}/schema.sql
+	${INSTALL_DATA} ${WRKSRC}/turndb/schema.userdb.redis ${PREFIX}/share/${PORTNAME}/schema.userdb.redis
+	${INSTALL_DATA} ${WRKSRC}/turndb/schema.stats.redis ${PREFIX}/share/${PORTNAME}/schema.stats.redis
 	${INSTALL_DATA} ${WRKSRC}/lib/libturnclient.a ${PREFIX}/lib/libturnclient.a
 	${INSTALL_DATA} ${WRKSRC}/examples/etc/turnserver.conf ${PREFIX}/etc/turnserver.conf.default
 	${INSTALL_DATA} ${WRKSRC}/examples/etc/turnuserdb.conf ${PREFIX}/etc/turnuserdb.conf.default
@@ -114,7 +126,9 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/postinstall.txt
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.sql ${DOCSDIR}/schema.sql
-PORTDOCS+=	postinstall.txt ${PORTREADMEDOCS} schema.sql
+	${INSTALL_DATA} ${WRKSRC}/turndb/schema.userdb.redis ${DOCSDIR}/schema.userdb.redis
+	${INSTALL_DATA} ${WRKSRC}/turndb/schema.stats.redis ${DOCSDIR}/schema.stats.redis
+PORTDOCS+=	postinstall.txt ${PORTREADMEDOCS} schema.sql schema.userdb.redis schema.stats.redis
 .endif
 
 post-install:

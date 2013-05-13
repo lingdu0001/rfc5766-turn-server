@@ -8,9 +8,11 @@ you have to:
 
 	b) For user accounts settings, if using the turnserver 
 	with authentication: create and edit /etc/turnuserdb.conf 
-	file, or set up PostgreSQL or MySQL database for user accounts.
+	file, or set up PostgreSQL or MySQL or Redis database for user accounts.
 	Use /etc/turnuserdb.conf.default as example for flat file DB,
-	or use %%PREFIX%%/share/turnserver/schema.sql as database schema.
+	or use %%PREFIX%%/share/turnserver/schema.sql as database schema,
+	or use %%PREFIX%%/share/turnserver/schema*redis as Redis
+	database description.
 
 	d) add line turnserver_enable="YES" to /etc/rc.conf.
 	 
