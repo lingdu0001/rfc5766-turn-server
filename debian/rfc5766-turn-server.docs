@@ -2,6 +2,8 @@ README.turnadmin
 README.turnserver
 README.turnutils
 turndb/schema.sql
+turndb/schema.userdb.redis
+turndb/schema.stats.redis
 docs/TurnNetworks.pdf
 docs/TURNServerRESTAPI.pdf
 

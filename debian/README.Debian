@@ -10,8 +10,12 @@ requires long-term credentials and some extra stuff. To set the turnserver param
 
 	b) For user accounts settings, if using the turnserver 
 	with authentication: edit /etc/turnuserdb.conf 
-	file, or set up PostgreSQL or MySQL database for user accounts.
-	Use /usr/share/rfc5766-turn-server/schema.sql as database schema.
+	file, or set up PostgreSQL or MySQL or Redis database for user accounts.
+	Use /usr/share/rfc5766-turn-server/schema.sql as SQL database schema,
+	or use /usr/share/rfc5766-turn-server/schema.userdb.redis as Redis database 
+	schema explanation for the user authentication data, and (optionally) use
+	/usr/share/rfc5766-turn-server/schema.stats.redis as Redis database
+	schema explanation for status and statistics data.
 
 2) You can start/stop the turnserver "manually", using the "/usr/bin/turnserver" 
    executable with appropriate options (see the documentation).
@@ -42,8 +46,8 @@ purposes, several accounting options are possible:
 If you are installing the TURN server for WebRTC usage, then you must set 
 the long term credentials mechanism option and add user accounts - 
 either with the flat config userdb file, or with PostgreSQL 
-database, or with MySQL database.
+database, or with MySQL database, or with Redis database.
 
 Please see the README.* files for details.
 
- -- Oleg Moskalenko <mom040267@gmail.com>  Sun, 28 Apr 2013 11:58:45 -0700
+ -- Oleg Moskalenko <mom040267@gmail.com>  Sun, 13 May 2013 11:58:45 -0700

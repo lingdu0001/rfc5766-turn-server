@@ -7,6 +7,10 @@ bin/turnutils_uclient usr/bin
 lib/libturnclient.a usr/lib
 turndb/schema.sql usr/share/rfc5766-turn-server
 turndb/schema.sql usr/share/doc/rfc5766-turn-server
+turndb/schema.userdb.redis usr/share/rfc5766-turn-server
+turndb/schema.userdb.redis usr/share/doc/rfc5766-turn-server
+turndb/schema.stats.redis usr/share/rfc5766-turn-server
+turndb/schema.stats.redis usr/share/doc/rfc5766-turn-server
 examples/etc/turnserver.conf etc
 examples/etc/turnuserdb.conf etc
 examples/etc/turnserver.conf usr/share/rfc5766-turn-server/examples/etc
@@ -38,8 +42,10 @@ examples/scripts/longtermsecure/secure_udp_c2c.sh usr/share/rfc5766-turn-server/
 examples/scripts/longtermsecure/secure_udp_client.sh usr/share/rfc5766-turn-server/examples/scripts/longtermsecure
 examples/scripts/longtermsecuredb/secure_relay_with_db_psql.sh usr/share/rfc5766-turn-server/examples/scripts/longtermsecuredb
 examples/scripts/longtermsecuredb/secure_relay_with_db_mysql.sh usr/share/rfc5766-turn-server/examples/scripts/longtermsecuredb
+examples/scripts/longtermsecuredb/secure_relay_with_db_redis.sh usr/share/rfc5766-turn-server/examples/scripts/longtermsecuredb
 examples/scripts/restapi/secure_relay_secret.sh usr/share/rfc5766-turn-server/examples/scripts/restapi
 examples/scripts/restapi/secure_relay_secret_with_db_mysql.sh usr/share/rfc5766-turn-server/examples/scripts/restapi
+examples/scripts/restapi/secure_relay_secret_with_db_redis.sh usr/share/rfc5766-turn-server/examples/scripts/restapi
 examples/scripts/restapi/secure_udp_client_with_secret.sh usr/share/rfc5766-turn-server/examples/scripts/restapi
 examples/scripts/shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh usr/share/rfc5766-turn-server/examples/scripts/shorttermsecure
 examples/scripts/shorttermsecure/secure_udp_client_short_term.sh usr/share/rfc5766-turn-server/examples/scripts/shorttermsecure

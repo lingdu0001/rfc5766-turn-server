@@ -5,7 +5,7 @@ Abstract: This set of documents describe how the turn server programs can be use
 Section: Network/Communication
 
 Format: Text
-Files: /usr/share/doc/rfc5766-turn-server/README.turnserver.gz /usr/share/doc/rfc5766-turn-server/README.turnadmin /usr/share/doc/rfc5766-turn-server/README.turnutils.gz /usr/share/doc/rfc5766-turn-server/schema.sql
+Files: /usr/share/doc/rfc5766-turn-server/README.turnserver.gz /usr/share/doc/rfc5766-turn-server/README.turnadmin /usr/share/doc/rfc5766-turn-server/README.turnutils.gz /usr/share/doc/rfc5766-turn-server/schema.sql /usr/share/doc/rfc5766-turn-server/schema.userdb.redis /usr/share/doc/rfc5766-turn-server/schema.stats.redis
 
 Format: PDF
 Files: /usr/share/doc/rfc5766-turn-server/TurnNetworks.pdf.gz /usr/share/doc/rfc5766-turn-server/TURNServerRESTAPI.pdf.gz
