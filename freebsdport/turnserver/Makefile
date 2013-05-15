@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	1.8.4.1
+PORTVERSION=	1.8.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
@@ -35,7 +35,7 @@ OPTIONS_DEFAULT=        MYSQL PGSQL REDIS
 
 .include <bsd.port.options.mk>
 
-PORTDOCS=	html TURNServerRESTAPI.pdf TurnNetworks.pdf
+PORTDOCS=
 PORTREADMEDOCS=	README.turnserver README.turnadmin README.turnutils INSTALL
 
 _BIN_UTILS=	peer stunclient rfc5769check uclient
