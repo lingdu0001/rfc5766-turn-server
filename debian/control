@@ -1,9 +1,13 @@
 Source: rfc5766-turn-server
 Section: net
 Priority: extra
-Maintainer: Oleg Moskalenko <mom040267@gmail.com>
-Uploaders: Daniel Pocock <daniel@pocock.com.au>
-Build-Depends: debhelper (>= 9.0.0), dpkg-dev (>= 1.16.1~), libssl-dev (>= 1.0.0~), libevent-dev (>= 2.0.1~), postgresql-client, libpq-dev, mysql-client, libmysqlclient-dev, libhiredis-dev
+Maintainer: Debian VoIP Team <pkg-voip-maintainers@lists.alioth.debian.org>
+Uploaders: Daniel Pocock <daniel@pocock.com.au>, 
+	   Oleg Moskalenko <mom040267@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), dpkg-dev (>= 1.16.1~), 
+	       libssl-dev (>= 1.0.0~), libevent-dev (>= 2.0.1~), 
+	       postgresql-client, libpq-dev, mysql-client, 
+	       libmysqlclient-dev, libhiredis-dev
 Standards-Version: 3.9.3
 Homepage: http://code.google.com/p/rfc5766-turn-server/
 #Vcs-Git: git://git.debian.org/pkg-voip/rfc5766-turn-server.git
@@ -13,11 +17,11 @@ Package: rfc5766-turn-server
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
 Conflicts: turnserver
-Description: server for ICE/STUN/TURN, NAT traversal for VoIP and WebRTC
- Free open source implementation of TURN Server / STUN Server / Network Traffic 
- Gateway The TURN Server is a VoIP media traffic NAT traversal server and 
- gateway. It can be used as a general-purpose network traffic 
- TURN server/gateway, too.
+Description: server for ICE/STUN/TURN, NAT traversal for VoIP and 
+ WebRTC. Free open source implementation of TURN Server / STUN Server / 
+ Network Traffic Gateway The TURN Server is a VoIP media traffic NAT 
+ traversal server and gateway. It can be used as a general-purpose 
+ network traffic TURN server/gateway, too.
  .
  This implementation also includes some extra features.
  . 
@@ -35,8 +39,8 @@ Description: server for ICE/STUN/TURN, NAT traversal for VoIP and WebRTC
  The implementation fully supports UDP, TCP, TLS and DTLS as protocols between
  the TURN client and the TURN Server. Both UDP and TCP relaying are supported.
  .
- Flat files, MySQL or PostgreSQL are supported for the user repository (if 
- authentication is required). 
+ Flat files, MySQL, PostgreSQL or Redis are all supported for the user 
+ repository (if authentication is required). 
  Both short-term and long-term credentials mechanisms are supported. 
  For WebRTC applications, TURN Server REST API for time-limited secret-based 
  authentication is implemented.

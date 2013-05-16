@@ -4,7 +4,7 @@ Upstream-Contact: mom040267@gmail.com
 Source: http://code.google.com/p/rfc5766-turn-server/
 
 Files: *
-Copyright: 2011-2013, Citrix Systems, Oleg Moskalenko <mom040267@gmail.com>
+Copyright: 2011, 2012, 2013, Citrix Systems
 License: BSD-RFC5766-TURN-SERVER-CITRIX
 Comment:
  This is a BSD license.
@@ -17,7 +17,7 @@ Comment:
 
 Files: debian/*
 Copyright: 2012, Daniel Pocock <daniel@pocock.com.au>
-	   2013 Oleg Moskalenko <mom040267@gmail.com>
+	   2013, Oleg Moskalenko <mom040267@gmail.com>
 License: GPL-3+
 Comment:
  The GPL can be found in /usr/share/common-licenses/GPL-3

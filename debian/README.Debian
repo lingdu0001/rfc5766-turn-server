@@ -2,9 +2,10 @@ rfc5766-turn-server for Debian
 ------------------------------
 
 1) The turnserver has reasonable default option values and can work in many 
-simple environments without extra configuration. But more complex meaningful usage 
-requires setting options specific to your particular environment. For example, WebRTC
-requires long-term credentials and some extra stuff. To set the turnserver parameters:
+simple environments without extra configuration. But more complex meaningful 
+usage requires setting options specific to your particular environment. 
+For example, WebRTC requires long-term credentials and some extra stuff. 
+To set the turnserver parameters:
 
 	a) Edit /etc/turnserver.conf file.
 
@@ -12,10 +13,10 @@ requires long-term credentials and some extra stuff. To set the turnserver param
 	with authentication: edit /etc/turnuserdb.conf 
 	file, or set up PostgreSQL or MySQL or Redis database for user accounts.
 	Use /usr/share/rfc5766-turn-server/schema.sql as SQL database schema,
-	or use /usr/share/rfc5766-turn-server/schema.userdb.redis as Redis database 
-	schema explanation for the user authentication data, and (optionally) use
-	/usr/share/rfc5766-turn-server/schema.stats.redis as Redis database
-	schema explanation for status and statistics data.
+	or use /usr/share/rfc5766-turn-server/schema.userdb.redis as Redis 
+	database schema explanation for the user authentication data, and 
+	(optionally) use /usr/share/rfc5766-turn-server/schema.stats.redis as 
+	Redis database schema explanation for status and statistics data.
 
 2) You can start/stop the turnserver "manually", using the "/usr/bin/turnserver" 
    executable with appropriate options (see the documentation).
@@ -23,7 +24,8 @@ requires long-term credentials and some extra stuff. To set the turnserver param
    then you have to uncomment line "TURNSERVER_ENABLED=1" in 
    the /etc/default/rfc5766-turn-server file.
    
-3) To create database schema, use schema in file /usr/share/rfc5766-turn-server/schema.sql.
+3) To create database schema, use schema in file 
+   /usr/share/rfc5766-turn-server/schema.sql.
    
 4) For additional information, run:
  
@@ -31,9 +33,10 @@ requires long-term credentials and some extra stuff. To set the turnserver param
    $ man turnadmin
    $ man turnutils
 
-5) During installation, no TURN user accounts are created.  rfc5766-turn-server does not 
-recognise UNIX accounts and requires accounts to be defined in it's own config
-file. By default, TURN server uses anonymous access. 
+5) During installation, no TURN user accounts are created.  
+rfc5766-turn-server does not recognise UNIX accounts and requires accounts 
+to be defined in it's own config file. By default, TURN server uses anonymous 
+access. 
 
 Traditional STUN doesn't require an account. For TURN relay
 purposes, several accounting options are possible:
@@ -50,4 +53,4 @@ database, or with MySQL database, or with Redis database.
 
 Please see the README.* files for details.
 
- -- Oleg Moskalenko <mom040267@gmail.com>  Sun, 13 May 2013 11:58:45 -0700
+ -- Oleg Moskalenko <mom040267@gmail.com>  Wed, 15 May 2013 11:58:45 -0700

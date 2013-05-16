@@ -111,7 +111,7 @@ case "$1" in
 		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
 	    esac
 	else
-            log_daemon_msg "rfc5766-turn-server disabled. \nSee /etc/default/rfc5766-turn-server for instructions on enabling"
+            log_daemon_msg "rfc5766-turn-server disabled. See /etc/default/rfc5766-turn-server for instructions on enabling"
             log_end_msg 0
             exit 0
 	fi

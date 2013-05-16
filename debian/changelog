@@ -1,5 +1,5 @@
-rfc5766-turn-server (1.8.4.1-1) unstable; urgency=low
+rfc5766-turn-server (1.8.4.2-1) unstable; urgency=low
 
   * Initial Debian release (Closes: #705064)
 
- -- Oleg Moskalenko <mom040267@gmail.com>  Wed, 14 May 2013 12:58:45 -0700
+ -- Oleg Moskalenko <mom040267@gmail.com>  Wed, 15 May 2013 12:58:45 -0700
