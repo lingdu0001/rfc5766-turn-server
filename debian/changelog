@@ -1,3 +1,9 @@
+rfc5766-turn-server (1.8.5.1-1) unstable; urgency=low
+
+  * Issue 28 fixed: config file parsing.
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Mon, 27 May 2013 00:06:20 -0700
+
 rfc5766-turn-server (1.8.5.0-1) unstable; urgency=low
 
   * Access control lists implemented
