@@ -1,17 +1,18 @@
 ==================================================================
 
-1) To enable turnserver as an automatically started system service, 
+1) You can start and stop the turnserver manually. But, if you want
+to enable turnserver as an automatically started system service, 
 you have to:
 
 	a) Create and edit /etc/turnserver.conf file.
-	Use /etc/turnserver.conf.default as an example.
+	Use %%PREFIX%%/etc/turnserver.conf.default as an example.
 
 	b) For user accounts settings, if using the turnserver 
 	with authentication: create and edit /etc/turnuserdb.conf 
 	file, or set up PostgreSQL or MySQL or Redis database for user accounts.
-	Use /etc/turnuserdb.conf.default as example for flat file DB,
-	or use %%PREFIX%%/share/turnserver/schema.sql as database schema,
-	or use %%PREFIX%%/share/turnserver/schema*redis as Redis
+	Use %%PREFIX%%/etc/turnuserdb.conf.default as example for flat file DB,
+	or use %%DATADIR%%/schema.sql as database schema,
+	or use %%DATADIR%%/schema*redis as Redis
 	database description.
 
 	d) add line turnserver_enable="YES" to /etc/rc.conf.
@@ -27,7 +28,7 @@ you have to:
    then you can start/stop it "manually", using the "turnserver" 
    executable with appropriate options (see the documentation).
    
-3) To create database schema, use schema in file %%PREFIX%%/share/turnserver/schema.sql.
+3) To create database schema, use schema in file %%DATADIR%%/schema.sql.
    
 4) For additional information, run:
  

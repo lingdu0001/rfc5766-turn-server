@@ -7,10 +7,10 @@ bin/turnutils_uclient
 lib/libturnclient.a
 etc/turnserver.conf.default
 etc/turnuserdb.conf.default
-share/turnserver/schema.sql
-share/turnserver/schema.userdb.redis
-share/turnserver/schema.stats.redis
-@dirrmtry share/turnserver
+%%DATADIR%%/schema.sql
+%%DATADIR%%/schema.userdb.redis
+%%DATADIR%%/schema.stats.redis
+@dirrmtry %%DATADIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turnserver.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turnuserdb.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turn_client_cert.pem
@@ -23,11 +23,11 @@ share/turnserver/schema.stats.redis
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/rfc5769.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/relay.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/tcp_client_c2c_tcp_relay.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/udp_c2c_client.sh 
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/udp_c2c_client.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/udp_client.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/tcp_client.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/loadbalance/master_relay.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/loadbalance/slave_relay_1.sh 
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/loadbalance/slave_relay_1.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/loadbalance/slave_relay_2.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/loadbalance/udp_c2c.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/loadbalance/tcp_c2c_tcp_relay.sh
@@ -66,4 +66,3 @@ include/turn/client/ns_turn_msg_defs.h
 @dirrmtry include/turn/client/
 @dirrmtry include/turn
 @stopdaemon turnserver
-
