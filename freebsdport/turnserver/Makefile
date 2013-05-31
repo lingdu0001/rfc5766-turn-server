@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	1.8.5.1
+PORTVERSION=	1.8.5.3
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
@@ -56,6 +56,7 @@ longtermsecuredb/secure_relay_with_db_redis.sh \
 restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_mysql.sh \
 restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_redis.sh \
 restapi/secure_udp_client_with_secret.sh \
+restapi/shared_secret_maintainer.pl \
 shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh shorttermsecure/secure_udp_client_short_term.sh shorttermsecure/secure_relay_short_term_mech.sh
 
 CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread
