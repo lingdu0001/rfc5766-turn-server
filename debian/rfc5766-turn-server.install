@@ -47,6 +47,7 @@ examples/scripts/restapi/secure_relay_secret.sh usr/share/rfc5766-turn-server/ex
 examples/scripts/restapi/secure_relay_secret_with_db_mysql.sh usr/share/rfc5766-turn-server/examples/scripts/restapi
 examples/scripts/restapi/secure_relay_secret_with_db_redis.sh usr/share/rfc5766-turn-server/examples/scripts/restapi
 examples/scripts/restapi/secure_udp_client_with_secret.sh usr/share/rfc5766-turn-server/examples/scripts/restapi
+examples/scripts/restapi/shared_secret_maintainer.pl usr/share/rfc5766-turn-server/examples/scripts/restapi
 examples/scripts/shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh usr/share/rfc5766-turn-server/examples/scripts/shorttermsecure
 examples/scripts/shorttermsecure/secure_udp_client_short_term.sh usr/share/rfc5766-turn-server/examples/scripts/shorttermsecure
 examples/scripts/shorttermsecure/secure_relay_short_term_mech.sh usr/share/rfc5766-turn-server/examples/scripts/shorttermsecure

@@ -1,3 +1,9 @@
+rfc5766-turn-server (1.8.5.3-1) unstable; urgency=low
+
+  * REST API information added
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Fri, 31 May 2013 01:52:04 -0700
+
 rfc5766-turn-server (1.8.5.1-1) unstable; urgency=low
 
   * Issue 28 fixed: config file parsing.
