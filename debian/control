@@ -17,37 +17,37 @@ Package: rfc5766-turn-server
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
 Conflicts: turnserver
-Description: server for ICE/STUN/TURN, NAT traversal for VoIP and 
- WebRTC. Free open source implementation of TURN Server / STUN Server / 
- Network Traffic Gateway The TURN Server is a VoIP media traffic NAT 
- traversal server and gateway. It can be used as a general-purpose 
- network traffic TURN server/gateway, too.
+Description: TURN and STUN server for VoIP 
+ STUN (Session Traversal Utilities for NAT) and TURN (Traversal Using Relays
+ around NAT) are protocols that can be used to provide NAT traversal for VoIP
+ and WebRTC. This package provides a VoIP media traffic NAT traversal server
+ and gateway.
  .
  This implementation also includes some extra features.
  . 
  Supported RFCs:
  TURN specs:
-  * RFC 5766 - base TURN specs
-  * RFC 6062 - TCP relaying TURN extension
-  * RFC 6156 - IPv6 extension for TURN
+  * RFC 5766 - base TURN specs;
+  * RFC 6062 - TCP relaying TURN extension;
+  * RFC 6156 - IPv6 extension for TURN;
   * Experimental DTLS support as client protocol.
  STUN specs:
-  * RFC 5389 - base "new" STUN specs
-  * RFC 5769 - test vectors for STUN protocol testing
-  * RFC 5780 - NAT behavior discovery support
+  * RFC 5389 - base "new" STUN specs;
+  * RFC 5769 - test vectors for STUN protocol testing;
+  * RFC 5780 - NAT behavior discovery support.
  .
- The implementation fully supports UDP, TCP, TLS and DTLS as protocols between
- the TURN client and the TURN Server. Both UDP and TCP relaying are supported.
+ The implementation fully supports UDP, TCP, TLS, and DTLS as protocols between
+ the TURN client and the TURN server. Both UDP and TCP relaying are supported.
  .
- Flat files, MySQL, PostgreSQL or Redis are all supported for the user 
- repository (if authentication is required). 
- Both short-term and long-term credentials mechanisms are supported. 
- For WebRTC applications, TURN Server REST API for time-limited secret-based 
- authentication is implemented.
+ Flat files, MySQL, PostgreSQL, or Redis are all supported for the user
+ repository (if authentication is required).
+ Both short-term and long-term credentials mechanisms are supported.
+ For WebRTC applications, the TURN server REST API for time-limited
+ secret-based authentication is implemented.
  .
- The load balancing can be implemented either by external networking tools, 
- or by the built-in ALTERNATE-SERVER mechanism.
+ Load balancing can be implemented either by external networking tools, or by
+ the built-in ALTERNATE-SERVER mechanism.
  .
- The implementation is supposed to be simple, easy to install and configure. 
- The project focuses on performance, scalability and simplicity. 
+ The implementation is intended to be simple to install and configure.
+ The project focuses on performance, scalability, and simplicity. 
  The aim is to provide an enterprise-grade TURN solution.

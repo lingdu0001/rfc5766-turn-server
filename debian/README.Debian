@@ -41,15 +41,16 @@ access.
 Traditional STUN doesn't require an account. For TURN relay
 purposes, several accounting options are possible:
 	  - anonymous access (the default option);
-	  - traditional long-term authentication mechanism (see RFC5766);
-	  - TURN REST API shared-secret-based long-term authentication mechanism
+	  - traditional long-term credentials mechanism (see RFC5766);
+	  - TURN REST API shared-secret-based long-term credentials mechanism
 	    (see TURN REST API docs);
 	  - short-term authentication mechanism (see RFC5766);
 
 If you are installing the TURN server for WebRTC usage, then you must set 
 the long term credentials mechanism option and add user accounts - 
 either with the flat config userdb file, or with PostgreSQL 
-database, or with MySQL database, or with Redis database.
+database, or with MySQL database, or with Redis database. Optionally,
+you can add TURN REST API on top of long-term credentials mechanism.
 
 Please see the README.* files for details.
 

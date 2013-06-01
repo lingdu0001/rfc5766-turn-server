@@ -1,3 +1,9 @@
+rfc5766-turn-server (1.8.5.3-2) unstable; urgency=low
+
+  * debian control file fixed, fix provided by Justin B Rye
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Fri, 31 May 2013 16:24:00 -0700
+
 rfc5766-turn-server (1.8.5.3-1) unstable; urgency=low
 
   * REST API information added
