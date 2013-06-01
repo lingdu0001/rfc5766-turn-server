@@ -1,0 +1,9 @@
+Document: rfc5766turnserver
+Title: RFC5766-TURN-Server documentation
+Author: Oleg Moskalenko, Citrix
+Abstract: This set of documents describe how the turn server programs can be used.
+Section: Network/Communication
+
+Format: Text
+Files: /usr/share/doc/rfc5766-turn-server/README.turnserver.gz /usr/share/doc/rfc5766-turn-server/README.turnadmin.gz /usr/share/doc/rfc5766-turn-server/README.turnutils.gz /usr/share/doc/rfc5766-turn-server/schema.sql /usr/share/doc/rfc5766-turn-server/schema.userdb.redis /usr/share/doc/rfc5766-turn-server/schema.stats.redis
+
