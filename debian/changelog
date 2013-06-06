@@ -1,8 +1,14 @@
-rfc5766-turn-server (1.8.6.1-1) UNRELEASED; urgency=low
+rfc5766-turn-server (1.8.6.2-1) unstable; urgency=low
+
+  * Tarball re-packaged.
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Thu, 06 Jun 2013 00:32:58 -0700
+
+rfc5766-turn-server (1.8.6.1-1) unstable; urgency=low
 
   * Bug fix: permissions check fixed for packets coming from the TURN peers.
 
- -- Oleg Moskalenko <mom040267@gmail.com>  Wed, 05 Jun 2013 23:51:09 -0700
+ -- Oleg Moskalenko <mom040267@gmail.com>  Thu, 06 Jun 2013 00:19:14 -0700
 
 rfc5766-turn-server (1.8.6.0-1) unstable; urgency=low
 
