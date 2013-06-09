@@ -1,5 +1,5 @@
 #labels Featured
-TURN(31 May 2013)	
+TURN(8 June 2013)	
 
 == GENERAL INFORMATION ==
 
@@ -518,6 +518,12 @@ STUN/TURN test vectors RFC 5769
 
 STUN NAT behavior discovery RFC 5780
 
+== WEB RESOURCES ==
+
+project page: http://code.google.com/p/rfc5766-turn-server/
+
+forum: https://groups.google.com/forum/?fromgroups=#!forum/turn-server-project-rfc5766-turn-server/
+
 == AUTHORS ==
 
 Oleg Moskalenko <mom040267@gmail.com>
@@ -547,4 +553,4 @@ Roman Lisagor <roman@demonware.net> :
 	Testing, code optimization
 	(since v1.8.6.0)
 
-							TURN(31 May 2013)
+						TURN(8 June 2013)
