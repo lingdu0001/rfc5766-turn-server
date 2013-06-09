@@ -1,3 +1,9 @@
+rfc5766-turn-server (1.8.6.3-1) unstable; urgency=low
+
+  * DontFragment flag removed from the UDP client-side listening sockets
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Sat, 08 Jun 2013 23:41:33 -0700
+
 rfc5766-turn-server (1.8.6.2-1) unstable; urgency=low
 
   * Tarball re-packaged.
