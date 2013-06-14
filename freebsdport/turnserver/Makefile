@@ -1,7 +1,7 @@
 # $FreeBSD: net/turnserver/Makefile 319998 2013-06-05 14:48:56Z gabor $
 
 PORTNAME=	turnserver
-PORTVERSION=	1.8.6.3
+PORTVERSION=	1.8.7.0
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
@@ -16,7 +16,7 @@ LIB_DEPENDS=	event-2:${PORTSDIR}/devel/libevent2
 
 SUB_FILES=	pkg-message
 
-MAN1=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_rfc5769check.1 turnutils_stunclient.1 turnutils_uclient.1
+MAN1=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_rfc5769check.1 turnutils_stunclient.1 turnutils_uclient.1 rfc5766-turn-server.1
 MANCOMPRESSED=	no
 
 USE_OPENSSL=	YES
