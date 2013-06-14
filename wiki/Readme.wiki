@@ -127,7 +127,7 @@ TURN(12 June 2013)
 
 ====Options:====
 
-    *   *-d,* *--listening-device* {{{<device-name}}} Listener interface device (optional functionality, Linux only). The turnserver process must have root privileges to bind the	listening endpoint to a device. If turnserver must run as a	process without root privileges, then just do not use this setting.
+    *   *-d,* *--listening-device* {{{<device-name>}}} Listener interface device (optional functionality, Linux only). The turnserver process must have root privileges to bind the	listening endpoint to a device. If turnserver must run as a	process without root privileges, then just do not use this setting.
     *   *-L,* *--listening-ip* {{{<ip>}}} Listener IP address of relay server.  Multiple listeners can  be specified.  If no *IP*(s) specified, then all IPv4 and IPv6 system IPs will be used for listening.
     *   *-p,* *--listening-port* {{{<port>}}} TURN listener port for UDP and TCP listeners (Default: 3478). Note: actually, TLS & DTLS sessions can connect to the "plain" TCP & UDP port(s), too - if allowed by configuration.
     *   *--tls-listening-port* {{{<port>}}}   TURN listener port for TLS and DTLS listeners (Default: 5349). Note: actually, "plain" TCP & UDP sessions can connect to the TLS & DTLS port(s), too - if allowed by configuration.
