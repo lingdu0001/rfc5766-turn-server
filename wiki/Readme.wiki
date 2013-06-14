@@ -171,9 +171,9 @@ This is a set of notes for the WebRTC users:
   # WebRTC uses long-term authentication mechanism, so you have to use -a option (or --lt-cred-mech). WebRTC relaying will not work with anonymous access or with short-term authentication. With -a option, do not forget to set the realm (-r option). You will also have to set up the user accounts, for that you have a number of options (see also the DATABASES section below):
     *   command-line options (-u).
     *   userdb config file.
-    *   database table (PostgreSQL or MySQL or Redis).
-    *   Redis key/value pair(s).
-    *   you also can use the TURN REST API (see docs). You will need shared secret(s) set either	through the command line option, or through the config file, or through the database table, or through Redis database.
+    *   database table (if PostgreSQL or MySQL used).
+    *   Redis key/value pair(s), if Redis is used.
+    *   you also can use the TURN REST API (see docs). You will need shared secret(s) set either	through the command line option, or through the config file, or through the database table (PostgreSQL or MySQL), or through the Redis database.
   # Usually WebRTC uses fingerprinting (-f).
   # -v option may be nice to see the connected clients.
   # -X is needed if you are running your TURN server behind a NAT.
