@@ -55,8 +55,8 @@ TURN(12 June 2013)
    * *-V,* *--Verbose* 'Extra' verbose mode, very annoying and not recommended.
    * *-o,* *--daemon* Run server process as daemon.
    * *-f,* *--fingerprint* Use fingerprints in the TURN messages. If an incoming request contains fingerprint, then TURN server will always add fingerprints to the messages in this session, regardless of the per-server setting.
-   * *-a,* *--lt-cred-mech* Use long-term credentials mechanism (this one you need for WebRTC usage). This option can be used with either flat file user database or PostgreSQL DB or MySQL DB for user keys storage.
-   * *-A,* *--st-cred-mech* Use short-term credentials mechanism. This option requires a PostgreSQL or MySQL DB for short term passwords storage.
+   * *-a,* *--lt-cred-mech* Use long-term credentials mechanism (this one you need for WebRTC usage). This option can be used with either flat file user database or PostgreSQL or MySQL or Redis DB for user keys storage.
+   * *-A,* *--st-cred-mech* Use short-term credentials mechanism. This option requires a PostgreSQL or MySQL or Redis DB for short term passwords storage.
    * *-z,* *--no-auth* Do not use any credentials mechanism, allow anonymous access. Opposite to *-a* and *-A* options.
    * *--use-auth-secret* Flag that sets a special WebRTC authorization option that is based upon authentication secret. This feature purpose is to support "TURN Server REST API" as described in TURNServerRESTAPI.pdf in the docs. This option can be used with long-term credentials mechanism only - it does not make much sense with the short-term mechanism. 
    * *--no-udp* Do not start 'plain' UDP listeners.
@@ -171,7 +171,7 @@ This is a set of notes for the WebRTC users:
   # WebRTC uses long-term authentication mechanism, so you have to use -a option (or --lt-cred-mech). WebRTC relaying will not work with anonymous access or with short-term authentication. With -a option, do not forget to set the realm (-r option). You will also have to set up the user accounts, for that you have a number of options (see also the DATABASES section below):
     *   command-line options (-u).
     *   userdb config file.
-    *   database table (PostgreSQL or MySQL).
+    *   database table (PostgreSQL or MySQL or Redis).
     *   Redis key/value pair(s).
     *   you also can use the TURN REST API (see docs). You will need shared secret(s) set either	through the command line option, or through the config file, or through the database table, or through Redis database.
   # Usually WebRTC uses fingerprinting (-f).
@@ -292,7 +292,7 @@ For the user database, the turnserver has the following options:
 For the status and statistics database, there are two choices:
 
   # The simplest choice is not to use it. Do not set --redis-statsdb option, and this functionality will be simply ignored.
-  # If you choose to use the statistics database, then set the --redis-statsdb option. This may be the same database as in --redis-userdb option, or it may be a different database. You may want to use different database for security or convenience reasons. Also, you can use different database management systems for the user database and for the status and statistics database. For example, you can use MySQL as the user database, and you can use redis for the statistics. Or you can use Redis for both.
+  # If you choose to use the statistics database, then set the --redis-statsdb option. This may be the same database as in --redis-userdb option, or it may be a different database. You may want to use different database for security or convenience reasons. Also, you can use different database management systems for the user database and for the status and statistics database. For example, you can use MySQL as the user database, and you can use Redis for the statistics. Or you can use Redis for both.
 
 So, we have 6 choices for the user management, and 2 choices for the statistics management. These two are totally independent. So, you have overall 6*2=12 ways to handle persistent information, choose any for your convenience.
 
