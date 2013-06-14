@@ -33,10 +33,10 @@ TURN(12 June 2013)
  *	_*turnutils_rfc5769check*_: a utility that checks the correctness of the STUN/TURN protocol implementation. This program will perform several checks and print the result on the screen. It will exit with 0 status if everything is OK, and with (-1) if there was an error in the protocol implementation.   
 
        In the "examples/scripts"	subdirectory, you will find the	 examples  of  command
-       lines to	be used	to run the programs. The scripts are meant to be run from examples/ subdirectory:
+       lines to	be used	to run the programs. The scripts are meant to be run from examples/ subdirectory, for example:
 {{{
 	$ cd examples
-	$ ./scripts/secure_relay.sh
+	$ ./scripts/longtermsecure/secure_relay.sh
 }}}
 
 == RUN ==
