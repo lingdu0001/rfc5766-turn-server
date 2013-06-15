@@ -1,7 +1,6 @@
 bin/turnserver
 bin/turnadmin
 bin/turnutils_peer
-bin/turnutils_rfc5769check
 bin/turnutils_stunclient
 bin/turnutils_uclient
 lib/libturnclient.a
@@ -20,7 +19,6 @@ etc/turnuserdb.conf.default
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/etc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/peer.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/rfc5769.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/relay.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/tcp_client_c2c_tcp_relay.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/udp_c2c_client.sh

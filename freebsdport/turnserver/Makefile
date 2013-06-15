@@ -16,7 +16,7 @@ LIB_DEPENDS=	event-2:${PORTSDIR}/devel/libevent2
 
 SUB_FILES=	pkg-message
 
-MAN1=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_rfc5769check.1 turnutils_stunclient.1 turnutils_uclient.1 rfc5766-turn-server.1
+MAN1=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_stunclient.1 turnutils_uclient.1 rfc5766-turn-server.1
 MANCOMPRESSED=	no
 
 USE_OPENSSL=	YES
@@ -38,11 +38,11 @@ OPTIONS_DEFAULT=	MYSQL PGSQL REDIS
 PORTDOCS=	html TURNServerRESTAPI.pdf TurnNetworks.pdf
 PORTREADMEDOCS=	README.turnserver README.turnadmin README.turnutils INSTALL
 
-_BIN_UTILS=	peer stunclient rfc5769check uclient
+_BIN_UTILS=	peer stunclient uclient
 
 _ETC_EXAMPLES=	turnserver.conf turnuserdb.conf turn_client_cert.pem \
 		turn_client_pkey.pem turn_server_cert.pem turn_server_pkey.pem
-_SCRIPT_EXAMPLES=	peer.sh	rfc5769.sh \
+_SCRIPT_EXAMPLES=	peer.sh	\
 basic/relay.sh basic/tcp_client_c2c_tcp_relay.sh basic/udp_c2c_client.sh \
 basic/udp_client.sh basic/tcp_client.sh \
 loadbalance/master_relay.sh loadbalance/slave_relay_1.sh loadbalance/slave_relay_2.sh \
