@@ -63,8 +63,8 @@ TURN(15 June 2013)
    * *--no-tcp* Do not start 'plain'TCP listeners.
    * *--no-tls* Do not start TLS listeners.
    * *--no-dtls* Do not start DTLS	listeners.
-   * *--no-udp-relay* Do not allow UDP relay endpoints, use only TCP relay option as defined in RFC 6062.
-   * *--no-tcp-relay* Do not allow TCP relay endpoints in RFC 6062 sense, use only UDP relay option as defined in RFC 5766. ATTENTION: Always use this option if you are not going to use TCP relay (RFC 6062). This option allows "usual" TURN TCP defined in RFC 5766 to work in multithreaded mode. Without this option, all TCP connections are handled in one relay thread. So, this option is very desirable when you need high performance TCP connections handling and you do not need RFC 6062 functionality.
+   * *--no-udp-relay* Do not allow UDP relay endpoints defined in RFC 5766, use only TCP relay endpoints as defined in RFC 6062.
+   * *--no-tcp-relay* Do not allow TCP relay endpoints defined in RFC 6062, use only UDP relay endpoints as defined in RFC 5766. ATTENTION: Always use this option if you are not going to use TCP relay (RFC 6062). This option allows "usual" TURN TCP defined in RFC 5766 to work in multithreaded mode. Without this option, all TCP connections are handled in one relay thread. So, this option is very desirable when you need high performance TCP connections handling and you do not need RFC 6062 functionality.
    * *--stale-nonce* Use extra security with nonce value having limited lifetime (600 secs).
    * *--no-stdout-log* Flag to prevent stdout log messages. By default, all log messages are going to both stdout and to the configured log. With this option everything will be going to the configured log file only (unless the log file itself is stdout).
    * *--syslog* Flag to redirect everything into the system log (syslog).
