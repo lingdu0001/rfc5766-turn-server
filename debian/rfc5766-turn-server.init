@@ -35,9 +35,6 @@ if [ ! -d "$PIDFILE_DIR" ];then
     chown $USER:$GROUP "$PIDFILE_DIR"
 fi
 
-# Load the VERBOSE setting and other rcS variables
-. /lib/init/vars.sh
-
 # Define LSB log_* functions.
 # Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
 . /lib/lsb/init-functions
@@ -102,26 +99,29 @@ do_reload() {
 
 case "$1" in
     start)
-	[ "$VERBOSE" != no ] && log_daemon_msg "Starting $DESC " "$NAME"
+	log_daemon_msg "Starting $DESC " "$PROCNAME"
 	
 	if test "$TURNSERVER_ENABLED" = 1; then
 	    do_start
 	    case "$?" in
-		0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
-		2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+		0|1) log_end_msg 0 ;;
+		2) log_end_msg 1 ;;
 	    esac
 	else
-            log_daemon_msg "rfc5766-turn-server disabled. See /etc/default/rfc5766-turn-server for instructions on enabling"
+            log_end_msg 0
+            log_daemon_msg "${NAME} disabled" "${PROCNAME}"
+            log_end_msg 0
+            log_daemon_msg "See /etc/default/${NAME} for instructions on enabling" "${PROCNAME}"
             log_end_msg 0
             exit 0
 	fi
 	;;
     stop)
-	[ "$VERBOSE" != no ] && log_daemon_msg "Stopping $DESC" "$NAME"
+	log_daemon_msg "Stopping $DESC" "$PROCNAME"
 	do_stop
 	case "$?" in
-	    0|1) [ "$VERBOSE" != no ] && log_end_msg 0 ;;
-	    2) [ "$VERBOSE" != no ] && log_end_msg 1 ;;
+	    0|1) log_end_msg 0 ;;
+	    2) log_end_msg 1 ;;
 	esac
 	;;
     status)
@@ -152,4 +152,4 @@ case "$1" in
 	;;
 esac
 
-:
+exit 0
