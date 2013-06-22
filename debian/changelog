@@ -1,8 +1,18 @@
 rfc5766-turn-server (1.8.7.0-1) unstable; urgency=low
 
   * Upstream Makefile fixes; manpage <project-name> added
+  * Classic STUN support
 
- -- Oleg Moskalenko <mom040267@gmail.com>  Thu, 13 Jun 2013 22:50:46 -0700
+ -- Oleg Moskalenko <mom040267@gmail.com>  Thu, 22 Jun 2013 22:50:46 -0700
+
+rfc5766-turn-server (1.8.6.3-2) unstable; urgency=low
+
+  * (closes: #710532)
+  * Standard bumped to 3.9.4
+  * init file fixed according to lintian
+  * rfc5769check utility removed from install
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Wed, 19 Jun 2013 23:29:40 -0700
 
 rfc5766-turn-server (1.8.6.3-1) unstable; urgency=low
 
