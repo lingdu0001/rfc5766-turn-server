@@ -23,8 +23,6 @@ Description: TURN and STUN server for VoIP
  and WebRTC. This package provides a VoIP media traffic NAT traversal server
  and gateway.
  .
- This implementation also includes some extra features.
- . 
  Supported RFCs:
  TURN specs:
   * RFC 5766 - base TURN specs;
@@ -32,6 +30,7 @@ Description: TURN and STUN server for VoIP
   * RFC 6156 - IPv6 extension for TURN;
   * Experimental DTLS support as client protocol.
  STUN specs:
+  * RFC 3489 - obsolete "classic" STUN specs;
   * RFC 5389 - base "new" STUN specs;
   * RFC 5769 - test vectors for STUN protocol testing;
   * RFC 5780 - NAT behavior discovery support.

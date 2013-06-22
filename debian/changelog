@@ -1,7 +1,11 @@
 rfc5766-turn-server (1.8.7.0-1) unstable; urgency=low
 
-  * Upstream Makefile fixes; manpage <project-name> added
-  * Classic STUN support
+  * (closes: #710532) extra fixes;
+  * Classic STUN RFC 3489 support;
+  * Upstream Makefile fixed; 
+  * configure script fixed;
+  * custom configure rule removed from the rules file;
+  * manpage <project-name> added;
 
  -- Oleg Moskalenko <mom040267@gmail.com>  Thu, 22 Jun 2013 22:50:46 -0700
 
