@@ -1,5 +1,5 @@
 #labels Featured
-TURN(15 June 2013)	
+TURN(22 June 2013)	
 
 == GENERAL INFORMATION ==
 
@@ -519,6 +519,8 @@ it would affect the performance.
 
 == STANDARDS ==
 
+classic STUN RFC 3489
+
 new STUN RFC 5389
 
 TURN RFC 5766
@@ -570,4 +572,4 @@ Vladimir Tsanev <tsachev@gmail.com> :
 	configure script and Makefile fixes,
 	Arch Linux port
 	(since v1.8.6.1);
-						TURN(15 June 2013)
+						TURN(22 June 2013)
