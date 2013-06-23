@@ -6,6 +6,8 @@ bin/turnutils_uclient usr/bin
 lib/libturnclient.a usr/lib
 turndb/schema.sql usr/share/rfc5766-turn-server
 turndb/schema.sql usr/share/doc/rfc5766-turn-server
+turndb/turntestredisdb.sh usr/share/rfc5766-turn-server
+turndb/turntestredisdb.sh usr/share/doc/rfc5766-turn-server
 turndb/schema.userdb.redis usr/share/rfc5766-turn-server
 turndb/schema.userdb.redis usr/share/doc/rfc5766-turn-server
 turndb/schema.stats.redis usr/share/rfc5766-turn-server
