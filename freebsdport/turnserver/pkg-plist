@@ -9,6 +9,7 @@ etc/turnuserdb.conf.default
 %%DATADIR%%/schema.sql
 %%DATADIR%%/schema.userdb.redis
 %%DATADIR%%/schema.stats.redis
+%%DATADIR%%/testredisdbsetup.sh
 @dirrmtry %%DATADIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turnserver.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turnuserdb.conf
