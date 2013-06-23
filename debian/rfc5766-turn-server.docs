@@ -4,5 +4,3 @@ README.turnutils
 turndb/schema.sql
 turndb/schema.userdb.redis
 turndb/schema.stats.redis
-turndb/testredisdbsetup.sh
-
