@@ -1,11 +1,11 @@
 # $FreeBSD: net/turnserver/Makefile 319998 2013-06-05 14:48:56Z gabor $
 
 PORTNAME=	turnserver
-PORTVERSION=	1.8.7.0
+PORTVERSION=	2.0.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} turn.extra.docs-1.8.4.2.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} turn.extra.docs-2.0.0.1.tar.gz
 
 MAINTAINER=	mom040267@gmail.com
 COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
