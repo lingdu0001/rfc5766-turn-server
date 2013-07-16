@@ -1,5 +1,5 @@
 #labels Featured
-TURN(22 June 2013)	
+TURN(16 July 2013)	
 
 == GENERAL INFORMATION ==
 
@@ -618,4 +618,4 @@ Vladimir Tsanev <tsachev@gmail.com> :
 	configure script and Makefile fixes,
 	Arch Linux port
 	(since v1.8.6.1);
-						TURN(22 June 2013)
+						TURN(16 July 2013)
