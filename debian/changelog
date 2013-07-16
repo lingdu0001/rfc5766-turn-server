@@ -1,3 +1,11 @@
+rfc5766-turn-server (2.0.0.0-1) unstable; urgency=low
+
+  * New networking engine: 1) scalable UDP socket model; 2)
+    multithreaded TCP relay implemented; 3) race condition fixed in
+    authentication of TCP sessions.
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Mon, 15 Jul 2013 22:34:05 -0700
+
 rfc5766-turn-server (1.8.7.0-1) unstable; urgency=low
 
   * (closes: #710532) extra fixes;
