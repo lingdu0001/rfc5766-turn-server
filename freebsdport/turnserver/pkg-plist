@@ -21,6 +21,7 @@ etc/turnuserdb.conf.default
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/peer.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/relay.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/dos_attack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/tcp_client_c2c_tcp_relay.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/udp_c2c_client.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/udp_client.sh
