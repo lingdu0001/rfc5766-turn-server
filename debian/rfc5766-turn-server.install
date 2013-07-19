@@ -22,6 +22,7 @@ examples/etc/turn_server_pkey.pem usr/share/rfc5766-turn-server/examples/etc
 examples/scripts/readme.txt usr/share/rfc5766-turn-server/examples/scripts
 examples/scripts/peer.sh usr/share/rfc5766-turn-server/examples/scripts
 examples/scripts/basic/relay.sh usr/share/rfc5766-turn-server/examples/scripts/basic
+examples/scripts/basic/dos_attack.sh usr/share/rfc5766-turn-server/examples/scripts/basic
 examples/scripts/basic/tcp_client_c2c_tcp_relay.sh usr/share/rfc5766-turn-server/examples/scripts/basic
 examples/scripts/basic/udp_c2c_client.sh usr/share/rfc5766-turn-server/examples/scripts/basic
 examples/scripts/basic/udp_client.sh usr/share/rfc5766-turn-server/examples/scripts/basic

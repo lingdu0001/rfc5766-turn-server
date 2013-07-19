@@ -1,3 +1,13 @@
+rfc5766-turn-server (2.1.1.1-1) unstable; urgency=low
+
+  * udp fixes.
+  * Makefile cleaning.
+  * Dependencies cleaning.
+  * DOS attack client emulation.
+  * DOS attack defense logic added to the server.
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Thu, 18 Jul 2013 23:50:45 -0700
+
 rfc5766-turn-server (2.0.0.0-1) unstable; urgency=low
 
   * New networking engine: 1) scalable UDP socket model; 2)
