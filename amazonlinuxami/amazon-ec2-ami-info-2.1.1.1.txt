@@ -1,18 +1,6 @@
-Current Amazon TURN Server public AMIs are available in all regions:
+Current Amazon TURN Server public AMI is available in US West (Oregon) region:
 
-Original AMI:
-	 US West (Oregon) - ami-4179e971
-
-Copies (may require 24 hours to appear in the public search):
-       EU Ireland -  ami-ff94868b
-       US East (N Virginia) -  ami-c394e4aa
-       US West (N California) -  ami-ea0b22af
-       Asia Pacific Singapore -  ami-16175e44
-       Asia Pacific Tokyo - ami-c97df7c8
-       Asia Pacific Sydney -  ami-934bd8a9
-       South America - San Paulo -  ami-6c73d671
-
-They also can be found with search by "rfc5766" string.
+search by "rfc5766" string or by "ami-c9d446f9".
 
 Below is the README.txt file included into AMI's ec2-user home directory, for information.
 
