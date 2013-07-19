@@ -1,5 +1,5 @@
 #labels Featured
-TURN(16 July 2013)	
+TURN(18 July 2013)	
 
 == GENERAL INFORMATION ==
 
@@ -393,6 +393,9 @@ $ turnadmin -S --redis-userdb="<db-connection-string>"
  *      *-x*     Request IPv6 relayed address (RFC6156).
  *      *-g*     Set DONT_FRAGMENT	parameter in TURN requests.
  *      *-A*     Use short-term credentials mechanism for authentication. By default, the program uses the long-term credentials mechanism if authentication is required.
+ *      *-D*     Mandatory channels padding (like in *pjnath*).
+ *      *-N*     Negative tests (some limited cases only).
+ *      *-O*     "DOS attack" intense mode.
 
 ====Options:====
 
@@ -618,4 +621,4 @@ Vladimir Tsanev <tsachev@gmail.com> :
 	configure script and Makefile fixes,
 	Arch Linux port
 	(since v1.8.6.1);
-						TURN(16 July 2013)
+						TURN(18 July 2013)
