@@ -33,6 +33,7 @@ examples/scripts/loadbalance/slave_relay_2.sh usr/share/rfc5766-turn-server/exam
 examples/scripts/loadbalance/udp_c2c.sh usr/share/rfc5766-turn-server/examples/scripts/loadbalance
 examples/scripts/loadbalance/tcp_c2c_tcp_relay.sh usr/share/rfc5766-turn-server/examples/scripts/loadbalance
 examples/scripts/longtermsecure/secure_dtls_client.sh usr/share/rfc5766-turn-server/examples/scripts/longtermsecure
+examples/scripts/longtermsecure/secure_dos_attack.sh usr/share/rfc5766-turn-server/examples/scripts/longtermsecure
 examples/scripts/longtermsecure/secure_relay.sh usr/share/rfc5766-turn-server/examples/scripts/longtermsecure
 examples/scripts/longtermsecure/secure_tcp_client_c2c_tcp_relay.sh usr/share/rfc5766-turn-server/examples/scripts/longtermsecure
 examples/scripts/longtermsecure/secure_tcp_client.sh usr/share/rfc5766-turn-server/examples/scripts/longtermsecure
