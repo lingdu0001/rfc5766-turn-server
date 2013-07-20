@@ -1,7 +1,7 @@
 # $FreeBSD: net/turnserver/Makefile 319998 2013-06-05 14:48:56Z gabor $
 
 PORTNAME=	turnserver
-PORTVERSION=	2.1.2.0
+PORTVERSION=	2.1.3.1
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
@@ -52,6 +52,7 @@ longtermsecure/secure_dtls_client.sh longtermsecure/secure_relay.sh \
 longtermsecure/secure_tcp_client_c2c_tcp_relay.sh longtermsecure/secure_tcp_client.sh \
 longtermsecure/secure_tls_client_c2c_tcp_relay.sh longtermsecure/secure_tls_client.sh \
 longtermsecure/secure_udp_c2c.sh longtermsecure/secure_udp_client.sh \
+longtermsecure/secure_dos_attack.sh longtermsecure/secure_udp_client.sh \
 longtermsecuredb/secure_relay_with_db_psql.sh longtermsecuredb/secure_relay_with_db_mysql.sh \
 longtermsecuredb/secure_relay_with_db_redis.sh \
 restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_mysql.sh \

@@ -39,6 +39,7 @@ etc/turnuserdb.conf.default
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_tls_client.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_udp_c2c.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_udp_client.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_dos_attack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_psql.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_mysql.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_redis.sh
