@@ -1,0 +1,133 @@
+==================================================================
+
+###   I. PLATFORMS SUPPORT   ###
+
+==================================================================
+
+1) Fedora package.
+
+2) DTLS support for Cygwin.
+
+3) MS Windows support.
+
+	Cygwin is supported. A "real" MS-Windows port would 
+	involve a usable GUI.
+	
+4) Debian submission upgrade.
+
+5) FreeBSD submission upgrade.
+
+==================================================================
+
+###   II. DOCS   ###
+
+==================================================================
+
+1) User's manual.
+
+2) Developer's manual.
+
+3) Structure Wiki into sections.
+
+==================================================================
+
+###   III. NETWORK ENGINE   ###
+
+==================================================================
+
+1) Multiple authentication servers, each in a separate thread
+
+2) For listening endpoints, flexible format like IP:port.
+
+==================================================================
+
+###   IV. PERFORMANCE OPTIMIZATION   ###
+
+==================================================================
+
+1) A smarter load balancer has to be implemented.
+ 
+	The load balancer has to have a heartbeat channels with 
+	the slave servers, currently it is only just a dumb 
+	round-robin load distributor.
+
+2) For a large enterprise, a user-space stack to be integrated.
+
+	An another socket abstraction to be implemented, 
+	the one that uses the user-space TCP/IP stack with 
+	zero memory copy. This is an ambitious goal that would 
+	increase the system scaleability, significantly. 
+	The stock TCP/IP stack in UNIX and in MS Windows do not 
+	scale gracefully. We are trying to suppress those issues 
+	in the TURN Server, by using an advanced synchronous 
+	I/O technique, but still the underlying stock TCP/IP stack 
+	is a limitation.  
+
+==================================================================
+
+###   V. SECURITY   ###
+
+==================================================================
+
+1) RADIUS integration ?
+
+2) Add SHA256 security.
+
+	SHA1 is mandatory according to RFC5766. But it would be 
+	nice to have SHA256, as an option. I guess that for some 
+	applications the additional CPU load can be justified.
+
+==================================================================
+
+###   VI. STANDARDS SUPPORT   ###
+
+==================================================================
+
+1) Follow the draft ICE endpoint mobility standard and implement 
+it if it is accepted:
+
+   http://tools.ietf.org/id/draft-wing-mmusic-ice-mobility-04.html#rfc.section.5.1
+
+2) For extra difficult NAT/FWs, consider implementing Websockets.
+
+==================================================================
+
+###   VII. MISC FEATURES   ###
+
+==================================================================
+
+
+1) Locale support (?).
+
+	Currently we assume that all text data is 8-bits encoded, 
+	like C locale. It would be nice to support localized 
+	strings (8-bits and 2-bytes as well). But I am not sure 
+	whether this is really important, given the essentially
+	backend nature of the TURN Server. The TURN server is so 
+	deeply "hidden" in the network infrastructure that the 
+	significant code complication 
+
+2) HTTP or GUI status monitor and management.
+
+	For enterprise users, a management (configuration, status 
+	and statistics) GUI has to be implemented. Currently, all 
+	these features are available through the shell command 
+	line and through Redis command line.
+
+	Also, Redis status data to be extended.
+
+3) Traffic recording (for selected allocations).
+
+	That would be a helpful feature for a large enterprise 
+	(for testing and security purposes). 
+
+==================================================================
+
+###   VIII. CODING STUFF   ###
+
+==================================================================
+
+1) Remove C++ compilation warnings in Solaris.
+
+==================================================================
+
