@@ -71,6 +71,7 @@ TURN(08 Aug 2013)
    * *-S,* *--stun-only* Run as STUN server only, all TURN requests will be ignored.
    * *--no-loopback-peers* Disallow peers on the loopback addresses (127.x.x.x and ::1).
    * *--no-multicast-peers* Disallow peers on well-known broadcast addresses (224.0.0.0 and above, and {{{FFXX:*}}}).
+   * * --udp-self-balance* balance the UDP traffic among the aux endpoints (for clients supporting 300 ALTERNATE-SERVER response). See *--aux-server* option.
    * *-h* Help.
 
 ====Config file setting:====
