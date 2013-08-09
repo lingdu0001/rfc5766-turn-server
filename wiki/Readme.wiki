@@ -149,7 +149,6 @@ Valid formats are 1.2.3.4:5555 for IPv4 and [1:2::3:4]:5555 for IPv6. There may 
     *   *-q,* *--user-quota* {{{<number>}}} Per-user allocation quota: how many concurrent allocations a user can create.
     *   *-Q,* *--total-quota* {{{<number>}}} Total allocations quota: global limit on concurrent allocations.
     *   *--static-auth-secret* {{{<secret>}}} Static authentication secret value (a string). If not set, then the turn server will try to use the 'dynamic' value in turn_secret table in user database (if present). The database-stored value can be changed on-the-fly by a separate program, so this is why that other mode is 'dynamic'. Multiple shared secrets can be used (both in the database and in the "static" fashion).
-    *   *--secret-ts-exp-time* {{{<seconds>}}} 	Expiration time for timestamp used with authentication secret, in seconds. The default value is 86400 (24 hours). This is 'TTL' in terms of TURNServerRESTAPI.pdf document.
     *	*-s,* *--max-bps* {{{<number>}}} Max bytes-per-second bandwidth a TURN session is allowed to handle (input and output network streams combined). Anything above that limit will be dropped.
     *   *--cert* {{{<file-name>}}} Certificate file, PEM format. Same file search rules applied  as for the configuration file. If both *--no-tls* and *--no-dtls* options are specified, then this parameter is not needed. Default value is turn_server_cert.pem.
     *   *--pkey* {{{<file-name>}}} Private key file, PEM format. Same file search rules applied as for the configuration file. If both *--no-tls* and *--no-dtls* options are specified, then this parameter is not needed. Default value is turn_server_pkey.pem.
@@ -160,6 +159,7 @@ Valid formats are 1.2.3.4:5555 for IPv4 and [1:2::3:4]:5555 for IPv6. There may 
     *   *-O*, *--redis-statsdb*	{{{<connection-string>}}}	Redis status and statistics database connection string, if used (default - empty, no Redis stats DB used). This database keeps allocations status information, and it can be also used for publishing and delivering traffic and allocation event notifications. The connection string has the same parameters as redis-userdb connection string.
     *   *--max-allocate-timeout* {{{<seconds>}}}	Max time, in seconds, allowed for full allocation establishment. Default is 60 seconds.
     *   *--denied-peer-ip=*{{{<IPaddr[-IPaddr]>}}}, *--allowed-peer-ip=*{{{<IPaddr[-IPaddr]>}}} Options to ban or allow specific ip addresses or ranges of ip addresses. If an ip address is specified as both allowed and denied, then the ip address is considered to be allowed. This is useful when you wish to ban a range of ip addresses, except for a few specific ips within that range.	This can be used when you do not want users of the turn server to be able to access machines reachable by the turn server, but would otherwise be unreachable from the internet (e.g. when the turn server is sitting behind a NAT).
+    *   *--cipher-list*	Allowed OpenSSL cipher list for TLS/DTLS connections. Default value is "ALL:eNULL:aNULL:NULL".
     
 ==== LOAD BALANCE ====
 
@@ -224,7 +224,7 @@ The temporary user is generated as:
 {{{temporary-username="username" + ":" + "timestamp"}}}
 
 where username is the persistent user name, and the timestamp format is just 
-seconds sinse 1970 - the same value as time(NULL) function returns.
+seconds sinse 1970 - the same value as time(NULL) function returns. The timestamp is the expiration time of the temporary password.
 
 The temporary password is obtained as HMAC-SHA1 function over the temporary
 username, with shared secret as the HMAC key, and then the result is encoded:
