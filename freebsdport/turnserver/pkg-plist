@@ -45,18 +45,23 @@ etc/turnuserdb.conf.default
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_redis.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret_with_db_mysql.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret_with_db_psql.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret_with_db_redis.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_udp_client_with_secret.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/shared_secret_maintainer.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_udp_client_short_term.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_relay_short_term_mech.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/selfloadbalance
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/selfloadbalance/secure_dos_attack.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/selfloadbalance/secure_relay.sh
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/basic
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/loadbalance
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/longtermsecure
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/longtermsecuredb
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/restapi
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/shorttermsecure
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/selfloadbalance
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 include/turn/ns_turn_defs.h
