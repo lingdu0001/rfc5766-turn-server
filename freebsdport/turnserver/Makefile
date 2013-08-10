@@ -58,8 +58,13 @@ longtermsecuredb/secure_relay_with_db_redis.sh \
 restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_mysql.sh \
 restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_redis.sh \
 restapi/secure_udp_client_with_secret.sh \
+restapi/secure_relay_secret_with_db_psql.sh \
 restapi/shared_secret_maintainer.pl \
-shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh shorttermsecure/secure_udp_client_short_term.sh shorttermsecure/secure_relay_short_term_mech.sh
+shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh \
+shorttermsecure/secure_udp_client_short_term.sh \
+shorttermsecure/secure_relay_short_term_mech.sh \
+selfloadbalance/secure_dos_attack.sh \
+selfloadbalance/secure_relay.sh
 
 CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread
 
@@ -111,6 +116,7 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}/scripts/longtermsecuredb
 	${MKDIR} ${EXAMPLESDIR}/scripts/restapi
 	${MKDIR} ${EXAMPLESDIR}/scripts/shorttermsecure
+	${MKDIR} ${EXAMPLESDIR}/scripts/selfloadbalance
 	${MKDIR} ${EXAMPLESDIR}/etc
 	${INSTALL_MAN} ${WRKSRC}/examples/scripts/readme.txt ${EXAMPLESDIR}/scripts
 .for f in ${_ETC_EXAMPLES}

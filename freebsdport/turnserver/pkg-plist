@@ -52,7 +52,6 @@ etc/turnuserdb.conf.default
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_udp_client_short_term.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_relay_short_term_mech.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/selfloadbalance
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/selfloadbalance/secure_dos_attack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/selfloadbalance/secure_relay.sh
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/basic
