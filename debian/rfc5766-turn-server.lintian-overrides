@@ -3,5 +3,9 @@
 #
 rfc5766-turn-server: possible-gpl-code-linked-with-openssl
 
+#
+# The project is not using any large files:
+#
+rfc5766-turn-server: binary-file-built-without-LFS-support
 
 

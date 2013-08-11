@@ -1,35 +1,11 @@
-rfc5766-turn-server (2.5.1.2-1) unstable; urgency=low
+rfc5766-turn-server (2.6.1.3-1) unstable; urgency=low
 
-  * Improved "split" network engine
-  * DTLS crash fixed.
-  * allow anonymous alternate-server functionality.
-  * getopt fix in client test programs.
+  * Network optimization
+  * Secirity protocols improvements (SSL23, TLS1.1, TLS1.2)
+  * REST API update according to the new draft specs
+  * "Classic" STUN fixes.
 
- -- Oleg Moskalenko <mom040267@gmail.com>  Tue, 23 Jul 2013 23:05:47 -0700
-
-rfc5766-turn-server (2.1.3.1-1) unstable; urgency=low
-
-  * Stronger defense against bad networking conditions.
-
- -- Oleg Moskalenko <mom040267@gmail.com>  Sat, 20 Jul 2013 14:24:47 -0700
-
-rfc5766-turn-server (2.1.1.1-1) unstable; urgency=low
-
-  * udp fixes.
-  * Makefile cleaning.
-  * Dependencies cleaning.
-  * DOS attack client emulation.
-  * DOS attack defense logic added to the server.
-
- -- Oleg Moskalenko <mom040267@gmail.com>  Thu, 18 Jul 2013 23:50:45 -0700
-
-rfc5766-turn-server (2.0.0.0-1) unstable; urgency=low
-
-  * New networking engine: 1) scalable UDP socket model; 2)
-    multithreaded TCP relay implemented; 3) race condition fixed in
-    authentication of TCP sessions.
-
- -- Oleg Moskalenko <mom040267@gmail.com>  Mon, 15 Jul 2013 22:34:05 -0700
+ -- Oleg Moskalenko <mom040267@gmail.com>  Sun, 11 Aug 2013 12:17:07 -0700
 
 rfc5766-turn-server (1.8.7.0-1) unstable; urgency=low
 
