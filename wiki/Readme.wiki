@@ -101,6 +101,9 @@ It tests the protocol implementation against the test vectors predefined in RFC 
 $ turnutils_rfc5769check
 }}}
 
+[http://code.google.com/p/rfc5766-turn-server/wiki/turnutils_rfc5769check PROTOCOL CHECK UTILITY WIKI PAGE]
+
+
 == LIBRARIES ==
 
        In the lib/ sub-directory the build process  will  create  TURN	client
