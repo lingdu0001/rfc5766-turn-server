@@ -1,5 +1,7 @@
 #labels Featured,Version-2.6.1.4
-TURN(08 Aug 2013)	
+#top-level readme doc
+
+TURN(15 Aug 2013)	
 
 == GENERAL INFORMATION ==
 
@@ -311,4 +313,4 @@ Vladimir Tsanev <tsachev@gmail.com> :
 	configure script and Makefile fixes,
 	Arch Linux port
 	(since v1.8.6.1);
-						TURN(08 Aug 2013)
+						TURN(15 Aug 2013)
