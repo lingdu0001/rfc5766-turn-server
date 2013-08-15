@@ -90,10 +90,8 @@ It sends a STUN request and shows the reply information.
 {{{
        $ turnutils_stunclient [options] <STUN-Server-IP-address>
 }}}
-====Options:====
 
- *      *-p* {{{<port>}}}     STUN server port (Default: 3478).
- *      *-L* {{{<ip>}}}     Local address to use (optional).
+[http://code.google.com/p/rfc5766-turn-server/wiki/turnutils_stunclient STUNCLIENT WIKI PAGE]
 
 === turnutils_rfc5769check tests the correctness of STUN protocol ===
 It tests the protocol implementation against the test vectors predefined in RFC 5769 and prints the results of the tests on the screen.   
