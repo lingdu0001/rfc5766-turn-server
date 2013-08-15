@@ -80,12 +80,8 @@ turnutils_peer is a simple UDP-only echo backend server. This application is use
 {{{
        $ turnutils_peer [-v] [options]
 }}}
-====Options:====
 
- *      *-p* {{{<port>}}}     Listening	UDP port (Default: 3480).
- *      *-d* {{{<device-name>}}}     Listening	interface device (optional, Linux only)
- *      *-L* {{{<ip>}}}     Listening	address	of _turnutils_peer_	server. Multiple listening addresses can be used, IPv4 and IPv6. If no listener address(es) defined, then it listens on all IPv4 and IPv6 addresses.
- *      *-v*     Verbose
+[http://code.google.com/p/rfc5766-turn-server/wiki/turnutils_peer PEER WIKI PAGE]
 
 === turnutils_stunclient is a basic STUN client ===
 It sends a STUN request and shows the reply information.
