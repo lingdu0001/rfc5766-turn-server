@@ -1,4 +1,4 @@
-#summary turnserver wiki
+#summary turnserver wiki page
 #labels Version-2.6.1.4
 
 ==turnserver application: a TURN relay server implementation==
