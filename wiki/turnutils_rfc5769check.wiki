@@ -1,4 +1,4 @@
-#summary rfc5769check utility page
+#summary rfc5769check utility wiki page
 #labels Version-2.6.1.4
 
 == turnutils_rfc5769check tests the correctness of STUN protocol ==
