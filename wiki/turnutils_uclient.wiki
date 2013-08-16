@@ -1,4 +1,4 @@
-#summary turnutils_uclient documentation
+#summary turnutils_uclient wiki page
 #labels Version-2.6.1.4
 
 == turnutils_uclient application (for test purposes only)==
