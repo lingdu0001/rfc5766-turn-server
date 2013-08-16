@@ -198,16 +198,17 @@ You can turn off the multi-threading by using "-m 0" parameter
 (or "--relay-threads=0"). It will keep all network packets processing within
 one thread, eliminating context switch etc - it may be a more efficient 
 option for your system. There still will be a separate authentication thread
-because the authentication process must not be holding the normalpackets 
-routing.
+because the authentication process must not be holding the routing of the "normal" packets.
 
 You can use "-m 0" option and run multiple TURN servers on your system, one 
-per CPU core. That would be probably the best performance option in terms of 
+per CPU core. That would be a good performance option in terms of 
 scalability. Each TURN server must have its own network listening address and
 its own relay IP and/or relay ports range - so the configuration will be
-complicated - but the performance will be the best possible. You can use 
+complicated - but the performance will be great. You can use 
 ALTERNATE-SERVER mechanism to present the whole "pack" as a single "initial"
 TURN server front-end to the external world.
+
+TURN Server version 2.6.X.Y introduced a new performance option - the "auxiliary" servers. You can start multiple listening network endpoints in single TURN server process. For example, you can listen to ports 80, 8080, 443, 3478 simultaneously. This is probably even better performance option than running multiple servers because each network endpoint will have its own thread(s) but they altogether will consume less system resources and less number of threads than multiple processes.
 
 == FILES ==
 
