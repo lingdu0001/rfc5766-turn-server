@@ -1,3 +1,12 @@
+rfc5766-turn-server (2.6.2.1-1) unstable; urgency=low
+
+  * UDP optimization.
+  * DTLS scalability. 
+  * Compatibility issues fixed.
+  * --pidfile option.
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Wed, 04 Sep 2013 23:30:48 -0700
+
 rfc5766-turn-server (2.6.1.4-1) unstable; urgency=low
 
   * Memory leak fixed (Issue 51)
