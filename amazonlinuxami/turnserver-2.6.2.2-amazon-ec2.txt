@@ -1,6 +1,6 @@
 Current Amazon TURN Server public AMI is available in US West (Oregon) region:
 
-search by "rfc5766" string or by "ami-4d8e137d".
+search by "rfc5766" string or by "ami-0e178b3e".
 
 Below is the README.txt file included into AMI's ec2-user home directory, for information.
 
