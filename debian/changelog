@@ -1,3 +1,10 @@
+rfc5766-turn-server (2.6.3.1-1) unstable; urgency=low
+
+  * Dynamic white/black IP lists.
+  * RFC 6062 fixes for pre-3.9 Linux kernel.
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Mon, 16 Sep 2013 23:03:43 -0700
+
 rfc5766-turn-server (2.6.2.1-1) unstable; urgency=low
 
   * UDP optimization.
