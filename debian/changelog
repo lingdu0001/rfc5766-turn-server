@@ -1,3 +1,16 @@
+rfc5766-turn-server (2.6.5.2-1) unstable; urgency=low
+
+  * Redis memory leak fixed.
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Tue, 08 Oct 2013 22:56:59 -0700
+
+rfc5766-turn-server (2.6.4.1-1) unstable; urgency=low
+
+  * Secure STUN Binding request;
+  * redis crash on empty database name fixed.
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Fri, 27 Sep 2013 23:05:55 -0700
+
 rfc5766-turn-server (2.6.3.1-1) unstable; urgency=low
 
   * Dynamic white/black IP lists.
