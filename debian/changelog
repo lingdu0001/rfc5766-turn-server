@@ -51,7 +51,7 @@ rfc5766-turn-server (1.8.7.0-1) unstable; urgency=low
   * custom configure rule removed from the rules file;
   * manpage <project-name> added;
 
- -- Oleg Moskalenko <mom040267@gmail.com>  Thu, 22 Jun 2013 22:50:46 -0700
+ -- Oleg Moskalenko <mom040267@gmail.com>  Sat, 22 Jun 2013 22:50:46 -0700
 
 rfc5766-turn-server (1.8.6.3-2) unstable; urgency=low
 
