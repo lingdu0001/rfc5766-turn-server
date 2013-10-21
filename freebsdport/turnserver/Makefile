@@ -1,7 +1,7 @@
 # $FreeBSD: net/turnserver/Makefile 319998 2013-06-05 14:48:56Z gabor $
 
 PORTNAME=	turnserver
-PORTVERSION=	2.6.5.3
+PORTVERSION=	2.6.6.0
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
@@ -12,8 +12,9 @@ COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
 
 LICENSE=	BSD
 
-CONFLICTS=	libevent-1.*
 LIB_DEPENDS=	event-2:${PORTSDIR}/devel/libevent2
+
+CONFLICTS=	libevent-1.*
 
 SUB_FILES=	pkg-message
 
@@ -50,6 +51,7 @@ basic/udp_client.sh basic/tcp_client.sh \
 loadbalance/master_relay.sh loadbalance/slave_relay_1.sh loadbalance/slave_relay_2.sh \
 loadbalance/udp_c2c.sh loadbalance/tcp_c2c_tcp_relay.sh \
 longtermsecure/secure_dtls_client.sh longtermsecure/secure_relay.sh \
+longtermsecure/secure_dtls_client_cert.sh longtermsecure/secure_relay_cert.sh \
 longtermsecure/secure_tcp_client_c2c_tcp_relay.sh longtermsecure/secure_tcp_client.sh \
 longtermsecure/secure_tls_client_c2c_tcp_relay.sh longtermsecure/secure_tls_client.sh \
 longtermsecure/secure_udp_c2c.sh longtermsecure/secure_udp_client.sh \
@@ -67,7 +69,7 @@ shorttermsecure/secure_relay_short_term_mech.sh \
 selfloadbalance/secure_dos_attack.sh \
 selfloadbalance/secure_relay.sh
 
-CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread
+CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread TURN_DISABLE_RPATH=1
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
