@@ -1,5 +1,5 @@
 #summary turnserver wiki page
-#labels Version-2.6.6.0
+#labels Version-2.6.6.1
 
 ==turnserver application: a TURN relay server implementation==
 
@@ -32,6 +32,8 @@
    * *--no-loopback-peers* Disallow peers on the loopback addresses (127.x.x.x and ::1).
    * *--no-multicast-peers* Disallow peers on well-known broadcast addresses (224.0.0.0 and above, and {{{FFXX:*}}}).
    * * --udp-self-balance* balance the UDP traffic among the aux endpoints (for clients supporting 300 ALTERNATE-SERVER response). See *--aux-server* option.
+    *   *--secure-stun*	Require authentication of the STUN Binding request. By default, the clients are allowed anonymous access to the STUN Binding functionality.
+    *   *--sha256*	Require SHA256 digest function to be used for the message integrity. By default, the server accepts both SHA1 (as per TURN standard specs) and SHA256 (as an extension) functions and the server switches to SHA256 only if the client session uses it. With this option, the server always requires the stronger SHA256 function. The client application must support this extension.
    * *-h* Help.
 
 ===Config file setting:===
@@ -122,7 +124,6 @@ Valid formats are 1.2.3.4:5555 for IPv4 and [1:2::3:4]:5555 for IPv6. There may 
     *   *--max-allocate-timeout* {{{<seconds>}}}	Max time, in seconds, allowed for full allocation establishment. Default is 60 seconds.
     *   *--denied-peer-ip=*{{{<IPaddr[-IPaddr]>}}}, *--allowed-peer-ip=*{{{<IPaddr[-IPaddr]>}}} Options to ban or allow specific ip addresses or ranges of ip addresses. If an ip address is specified as both allowed and denied, then the ip address is considered to be allowed. This is useful when you wish to ban a range of ip addresses, except for a few specific ips within that range.	This can be used when you do not want users of the turn server to be able to access machines reachable by the turn server, but would otherwise be unreachable from the internet (e.g. when the turn server is sitting behind a NAT). The 'white" and "black" peer IP ranges can also be dynamically changed in the database.
     *   *--pidfile* File name to store the pid of the process. Default is /var/run/turnserver.pid (if superuser account is used) or /var/tmp/turnserver.pid .
-    *   *--secure-stun*	Require authentication of the STUN Binding request. By default, the clients are allowed anonymous access to the STUN Binding functionality.
     
 === LOAD BALANCE ===
 
