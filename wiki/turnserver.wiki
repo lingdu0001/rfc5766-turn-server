@@ -32,8 +32,8 @@
    * *--no-loopback-peers* Disallow peers on the loopback addresses (127.x.x.x and ::1).
    * *--no-multicast-peers* Disallow peers on well-known broadcast addresses (224.0.0.0 and above, and {{{FFXX:*}}}).
    * * --udp-self-balance* balance the UDP traffic among the aux endpoints (for clients supporting 300 ALTERNATE-SERVER response). See *--aux-server* option.
-    *   *--secure-stun*	Require authentication of the STUN Binding request. By default, the clients are allowed anonymous access to the STUN Binding functionality.
-    *   *--sha256*	Require SHA256 digest function to be used for the message integrity. By default, the server accepts both SHA1 (as per TURN standard specs) and SHA256 (as an extension) functions and the server switches to SHA256 only if the client session uses it. With this option, the server always requires the stronger SHA256 function. The client application must support this extension.
+   * *--secure-stun*	Require authentication of the STUN Binding request. By default, the clients are allowed anonymous access to the STUN Binding functionality.
+   * *--sha256*	Require SHA256 digest function to be used for the message integrity. By default, the server accepts both SHA1 (as per TURN standard specs) and SHA256 (as an extension) functions and the server switches to SHA256 only if the client session uses it. With this option, the server always requires the stronger SHA256 function. The client application must support this extension.
    * *-h* Help.
 
 ===Config file setting:===
