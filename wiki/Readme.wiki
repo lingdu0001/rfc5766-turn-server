@@ -1,7 +1,7 @@
 #summary top-level readme doc
-#labels Featured,Version-2.6.1.4
+#labels Featured,Version-2.6.6.1
 
-TURN(15 Aug 2013)	
+TURN(27 Oct 2013)	
 
 == GENERAL INFORMATION ==
 
@@ -282,4 +282,9 @@ Po-sheng Lin <personlin118@gmail.com> :
         Libevent dependencies cleaning
         (since v2.0.1.1);
 
-						TURN(15 Aug 2013)
+Peter Dunkley <peter.dunkley@crocodilertc.net> :
+	CentOS/Fedora port
+	(since v2.6.6.1)
+
+
+						TURN(27 Oct 2013)
