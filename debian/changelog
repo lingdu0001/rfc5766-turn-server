@@ -1,3 +1,9 @@
+rfc5766-turn-server (2.6.6.1-1) unstable; urgency=low
+
+  * SHA256 support added (TURN extension)
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Wed, 30 Oct 2013 23:15:51 -0700
+
 rfc5766-turn-server (2.6.6.0-1) unstable; urgency=low
 
   * CA file option added to TLS/DTLS functionality.
