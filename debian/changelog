@@ -1,3 +1,9 @@
+rfc5766-turn-server (2.6.7.1-1) unstable; urgency=low
+
+  * Sync to upstream 2.6.7.1
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Thu, 07 Nov 2013 22:54:50 -0800
+
 rfc5766-turn-server (2.6.6.1-1) unstable; urgency=low
 
   * SHA256 support added (TURN extension)
