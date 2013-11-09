@@ -1,5 +1,5 @@
 #summary turnserver wiki page
-#labels Version-2.6.7.0
+#labels Version-2.6.7.2
 
 ==turnserver application: a TURN relay server implementation==
 
@@ -34,7 +34,7 @@
    * *--secure-stun*	Require authentication of the STUN Binding request. By default, the clients are allowed anonymous access to the STUN Binding functionality.
    * *-S,* *--stun-only* Run as STUN server only, all TURN requests will be ignored. Option to suppress TURN functionality, only STUN requests will be processed.
    * *--no-stun*	Run as TURN server only, all STUN requests will be ignored. Option to suppress STUN functionality, only TURN requests will be processed.
-   * *--sha256*	Require SHA256 digest function to be used for the message integrity. By default, the server accepts both SHA1 (as per TURN standard specs) and SHA256 (as an extension) functions and the server switches to SHA256 only if the client session uses it. With this option, the server always requires the stronger SHA256 function. The client application must support this extension.
+   * *--sha256*	Require SHA256 digest function to be used for the message integrity. By default, the server accepts both SHA1 (as per TURN standard specs) and SHA256 (as an extension) functions and the server switches to SHA256 only if the client session uses it. With this option, the server always requires the stronger SHA256 function. The client application must support SHA256 hash function if this option is used. If the server obtains a message from the client with a weaker  (SHA1)  hash  function  then  the server returns error code 441.
    * *-h* Help.
 
 ===Config file setting:===
