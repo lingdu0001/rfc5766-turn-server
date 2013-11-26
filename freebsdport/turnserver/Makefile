@@ -1,7 +1,7 @@
 # $FreeBSD: net/turnserver/Makefile 319998 2013-06-05 14:48:56Z gabor $
 
 PORTNAME=	turnserver
-PORTVERSION=	3.0.0.0
+PORTVERSION=	3.0.1.2
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
