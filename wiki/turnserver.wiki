@@ -1,5 +1,5 @@
 #summary turnserver wiki page
-#labels Version-3.0.1.2
+#labels Version-3.0.2.1
 
 ==turnserver application: a TURN relay server implementation==
 
@@ -35,7 +35,7 @@
    * *-S,* *--stun-only* Run as STUN server only, all TURN requests will be ignored. Option to suppress TURN functionality, only STUN requests will be processed.
    * *--no-stun*	Run as TURN server only, all STUN requests will be ignored. Option to suppress STUN functionality, only TURN requests will be processed.
    * *--sha256*	Require SHA256 digest function to be used for the message integrity. By default, the server accepts both SHA1 (as per TURN standard specs) and SHA256 (as an extension) functions and the server switches to SHA256 only if the client session uses it. With this option, the server always requires the stronger SHA256 function. The client application must support SHA256 hash function if this option is used. If the server obtains a message from the client with a weaker  (SHA1)  hash  function  then  the server returns error code 441.
-   * *--mobility*    Mobility with ICE (MICE) specs support. Forces -m 1 option.
+   * *--mobility*    Mobility with ICE (MICE) specs support.
    * *-h* Help.
 
 ===Config file setting:===
