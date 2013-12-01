@@ -1,3 +1,21 @@
+rfc5766-turn-server (3.0.2.1-1) unstable; urgency=low
+
+  * Multithreaded Mobile ICE and RFC 6062 fixes
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Sun, 01 Dec 2013 00:20:55 -0800
+
+rfc5766-turn-server (3.0.1.2-1) unstable; urgency=low
+
+  * Mobile ICE and some bugs fixed
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Tue, 26 Nov 2013 12:03:27 -0800
+
+rfc5766-turn-server (3.0.0.0-1) unstable; urgency=low
+
+  * New network engine for Linux kernel 3.9+
+
+ -- Oleg Moskalenko <mom040267@gmail.com>  Sun, 10 Nov 2013 21:55:39 -0800
+
 rfc5766-turn-server (2.6.7.1-1) unstable; urgency=low
 
   * Sync to upstream 2.6.7.1
