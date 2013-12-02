@@ -1,5 +1,5 @@
 #summary turnutils_uclient wiki page
-#labels Version-3.0.1.3
+#labels Version-3.0.2.2
 
 == turnutils_uclient application (for test purposes only)==
   It was designed to simulate multiple clients. It uses asynch IO API in  libevent to  handle  multiple  clients. A  client connects to the relay, negotiates the session, and sends	multiple  (configured  number) messages	to  the	 server	 (relay), expecting the	same number of replies. The length of the messages is configurable.   The  message is an arbitrary octet stream, but it	can be configured as a string.  The number of the messages to send is configurable.
@@ -33,7 +33,7 @@
 ===Options:===
 
  *      *-l* {{{<number>}}}     Message length (Default: 100 Bytes).
- *      *-i* {{{<file-name>}}}     Certificate file (for secure connections only).
+ *      *-i* {{{<file-name>}}}     Certificate file (for secure connections only, optional).
  *      *-k* {{{<file-name>}}}     Private key file (for secure connections only).
  *      *-p* {{{<port>}}}     *TURN* *Server* port (Default: 3478 unsecure,	5349 secure).
  *      *-n* {{{<number>}}}     Number of	messages to send (Default: 5).
