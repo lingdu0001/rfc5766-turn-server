@@ -3,17 +3,27 @@
 
 ==TURN relay server load balance and performance optimization==
 
-Performance optimization may be achieved by combination of several approaches:
+The TURN Server performance mostly depends on how efficiently the operational system handles the TCP/IP stack operations. Performance optimization may be achieved by combination of several approaches:
+
+  * ===High-end NICs with RSS feature (Receive-side scaling).===
+
+See also the next section.
+
+  * ==="Software RSS" : Receive Packet Steering (RPS).===
+
+If your network card does not support RSS, your can use an OS that emulates that functionality in software, for example recent versions of BSD and Linux. Read the documentation on your OS to find out how to turn ON RSS and RPS. General description what RSS and RPS are can be found here:
+
+[https://github.com/torvalds/linux/blob/master/Documentation/networking/scaling.txt Scaling in the Linux Networking Stack]
 
   * ===Load balancing among multiple systems.===
 
-This is the best and most efficient performance tuning approach.
+This is the best and most efficient performance tuning approach. It allows near-linear performance improvement - proportional to the number of available systems.
 
 You have three options here:
 
     # Set a complex networking load-balancing equipment that redirects the requests to a member of the TURN servers group. It must take care about redirecting the requests to the same server from the same client - because some TURN sessions from the same client must share the information.
     # Set a less complex scheme with round-robin DNS. The client must send all its requests to the same DNS-discovered TURN server.
-    # Use build-in balancing capability with ALTERNATE-SERVER option (--alternate-server options). In this case, the client must also send all requests to the same alternate-server address. You set a single system as the "front-end" of the cluster of TURN servers, and that "load banacer" system does nothing - it just returns 300 ALTERNATE-SERVER error to all clients, with an alternate server IP address, so the client will re-connect to another server. If the alternate servers are chosen in a round-robina manner, then you have	a load-balancing cluster of TURN servers. 
+    # Use build-in balancing capability with ALTERNATE-SERVER option (--alternate-server options). In this case, the client must also send all requests to the same alternate-server address. You set a single system as the "front-end" of the cluster of TURN servers, and that "load banacer" system does nothing - it just returns 300 ALTERNATE-SERVER error to all clients, with an alternate server IP address, so the client will re-connect to another server. If the alternate servers are chosen in a round-robin manner, then you have	a load-balancing cluster of TURN servers. 
 
   * ===Load balancing and optimization withing single system.===
 
@@ -21,9 +31,9 @@ If you are using Linux kernel 3.9 or newer, and you have TURN Server
 version 3.0.0.0 or newer, then you can skip this section. Your TURN 
 server architecture is very finely tuned for your platform and it is 
 already reasonably optimal as-is. If you are using a different system, 
-then read on.
+a great performance is still achievable - read on.
 
-The TURN Server performance mostly depends on how efficiently the operational system handles the TCP/IP stack. Usually, the TCP part of it is properly optimized, but the UDP handling is often suboptimal - so far, a typical UDP stack implementation is not very well tuned for the "persistent" UDP sessions like ones used in TURN. For example, by default the Linux kernel hashes all UDP sockets in just 128 buckets; if you have thousands UDP sessions then you have lots of UDP sockets which are handled inefficiently. 
+As it was said before, the TURN Server performance mostly depends on how efficiently the operational system handles the TCP/IP stack operations. Usually, the TCP part of the stack is properly optimized, but the UDP handling is often suboptimal - so far, a typical UDP stack implementation is not very well tuned for the "persistent" UDP sessions like ones used in TURN. For example, by default the Linux kernel hashes all UDP sockets in just 128 buckets; if you have thousands UDP sessions then you have lots of UDP sockets which are handled inefficiently. 
 
 In other words, the implementation of UDP in the Linux kernel makes use a hash table to store socket structures. In kernel 2.6.32 (default in CentOS 6, for example) this hash table is hardcoded to have 128 entries. So with a large number of sockets, the performance of the table degrades to a linked list which must be traversed for each incoming packet. 
 
@@ -38,13 +48,3 @@ system configuration. The default start-up TURN Server configuration is a compro
 The TURN server parameter -m allows tuning of the threading configuration. You can turn off the multi-threading by using "-m 0" parameter (or "--relay-threads=0"). It will keep all network packets processing within one thread, eliminating context switch etc - it may be a more efficient option for your system. There still will be a separate authentication thread because the authentication process must not be holding the normal packets routing.
 
 You can use "-m 0" option and run multiple TURN servers on your system, one per CPU core. That would be probably the best performance option in terms of scalability. Each TURN server must have its own network listening address and its own relay IP and/or relay ports range - so the configuration will be complicated - but the performance will be the best possible. You can use ALTERNATE-SERVER mechanism to present the whole "pack" as a single "initial" TURN server front-end to the external world.
-
-  * ===High-end NICs with RSS feature (Receive-side scaling).===
-
-See also the next section.
-
-  * ==="Software RSS" : Receive Packet Steering (RPS).===
-
-If your network card does not support RSS, your can use an OS that emulates that functionality in software, for example recent versions of BSD and Linux. Read the documentation on your OS to find out how to turn ON RSS and RPS. General description what RSS and RPS are can be found here:
-
-[https://github.com/torvalds/linux/blob/master/Documentation/networking/scaling.txt Scaling in the Linux Networking Stack]
