@@ -3,10 +3,87 @@
 
 ==TURN relay server load balance and performance optimization==
 
-To set a load balancing scheme, you have several options:
+Performance optimization may be achieved by combination of several approaches:
 
-	# Set a complex networking load-balancing equipment that redirects the requests to a member of the TURN servers group. It must take care about redirecting the requests to the same server from the same client - because some TURN sessions from the same client must share the information.
-	# Set a less complex scheme with round-robin DNS. The same precaution must be taken as in the first case.
-	# Use build-in balancing capability with ALTERNATE-SERVER option (--alternate-server and --tls-alternate-server options). In this case, the shared information in the session will be taken care of automatically by the "master" TURN server.
-	# A good performance-enhancing option would be using a system with multiple CPUs, fast network card(s), TURN Server version 3.0 or newer and Linux kernel version 3.9 or newer (for example, Fedora or Archlinux). The new advanced network features of the Linux kernel 3.9+ allows automatic load balancing between multiple CPUs in the system. The TURN server uses those features when they are available on the system.
-	
+  # Load balancing among multiple systems.
+
+This is the best and most efficient performance tuning approach.
+
+You have three options here:
+
+    * Set a complex networking load-balancing equipment that redirects the requests to a member of the TURN servers group. It must take care about redirecting the requests to the same server from the same client - because some TURN sessions from the same client must share the information.
+    * Set a less complex scheme with round-robin DNS. The client must send all its requests to the same DNS-discovered TURN server.
+    * Use build-in balancing capability with ALTERNATE-SERVER option (--alternate-server options). In this case, the client must also send all requests to the same alternate-server address. You set a single system as the "front-end" of the cluster of TURN servers, and that "load banacer" system does nothing - it just returns 300 ALTERNATE-SERVER error to all clients, with an alternate server IP address, so the client will re-connect to another server. If the alternate servers are chosen in a round-robina manner, then you have	a load-balancing cluster of TURN servers. 
+
+  # Load balancing and optimization withing single system.
+
+If you are using Linux kernel 3.9 or newer, and you have TURN Server 
+version 3.0.0.0 or newer, then you can skip this section. Your TURN 
+server architecture is very finely tuned for your platform and it is 
+already reasonably optimal as-is. If you are using a different system, 
+then read on.
+
+The TURN Server performance mostly depends on how efficiently the operational 
+system handles the TCP/IP stack. Usually, the TCP part of it is properly 
+optimized, but the UDP handling is often suboptimal - so far, a typical UDP stack 
+implementation is not very well tuned for the "persistent" UDP sessions like 
+ones used in TURN. For example, by default the Linux kernel hashes all UDP 
+sockets in just 128 buckets; if you have thousands UDP sessions then you have 
+lots of UDP sockets which are handled inefficiently. 
+
+In other words, the implementation of UDP in the Linux kernel makes use a 
+hash table to store socket structures. In kernel 2.6.32 (default in CentOS 6,
+for example) this hash table is hardcoded to have 128 entries. So with a
+large number of sockets, the performance of the table degrades to a linked
+list which must be traversed for each incoming packet. 
+
+If you have a Linux kernel <=2.6.32 then you can change the hardcoded hash 
+size in the kernel code and re-compile the kernel. If you have a more recent
+kernel then you can do that without kernel recompilation. Kernel 2.6.33 
+introduced a configurable UDP hash table size, and a second UDP hash table,
+keyed by IP+port (previous to this it was only by port). You can configure
+the hash table size by setting the "uhash_entries" boot-time kernel variable
+(for example, in /etc/grub.conf). For best performance, set it to 65536.
+ 
+Other OSs have similar issues. Check documentation to your OS for 
+configuration instructions.
+
+The TURN Server is designed as a multi-threaded network packets routing 
+system. But multi-threading is not always the best option for a particular
+system configuration. The default start-up TURN Server configuration is a
+compromise between memory, thread affinity, cache and CPU resources, and
+between TCP and UDP typical "vanilla" OS networking stack implementations.
+This is not a specialised system tuned for a very particular hardware, 
+a particular OS or a particular load pattern. The TURN Server design is 
+tuned for very wide range of possible applications, so it may not be 
+100% most optimal for a particular application on the particulkar platform. 
+But it must be good enough to be usable everywhere. 
+  
+The TURN server parameter -m allows tuning of the threading configuration. 
+You can turn off the multi-threading by using "-m 0" parameter 
+(or "--relay-threads=0"). It will keep all network packets processing within
+one thread, eliminating context switch etc - it may be a more efficient 
+option for your system. There still will be a separate authentication thread
+because the authentication process must not be holding the normal packets 
+routing.
+
+You can use "-m 0" option and run multiple TURN servers on your system, one 
+per CPU core. That would be probably the best performance option in terms of 
+scalability. Each TURN server must have its own network listening address and
+its own relay IP and/or relay ports range - so the configuration will be
+complicated - but the performance will be the best possible. You can use 
+ALTERNATE-SERVER mechanism to present the whole "pack" as a single "initial"
+TURN server front-end to the external world.
+
+  # High-end NICs with RSS feature (Receive-side scaling).
+
+See also the next section.
+
+  # "Software RSS" : Receive Packet Steering (RPS).
+
+If your network card does not support RSS, your can use an OS that emulates
+that functionality in software, for example recent versions of BSD and Linux. 
+Read the documentation on your OS to find out how to turn ON RSS and RPS. 
+General description what RSS and RPS are can be found here:
+
+https://github.com/torvalds/linux/blob/master/Documentation/networking/scaling.txt
