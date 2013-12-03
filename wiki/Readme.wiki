@@ -157,7 +157,7 @@ it would affect the performance.
 
 == Performance tuning ==
 
-[https://code.google.com/p/rfc5766-turn-server/wiki/turn_performance_and_load_balance Performance Optimization and Load Balance WIKI PAGE]
+[http://code.google.com/p/rfc5766-turn-server/wiki/turn_performance_and_load_balance Performance Optimization and Load Balance WIKI PAGE]
 
 == FILES ==
 
