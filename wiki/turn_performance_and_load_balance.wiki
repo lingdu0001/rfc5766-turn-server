@@ -5,17 +5,17 @@
 
 Performance optimization may be achieved by combination of several approaches:
 
-  # Load balancing among multiple systems.
+  * ===Load balancing among multiple systems.===
 
 This is the best and most efficient performance tuning approach.
 
 You have three options here:
 
-    * Set a complex networking load-balancing equipment that redirects the requests to a member of the TURN servers group. It must take care about redirecting the requests to the same server from the same client - because some TURN sessions from the same client must share the information.
-    * Set a less complex scheme with round-robin DNS. The client must send all its requests to the same DNS-discovered TURN server.
-    * Use build-in balancing capability with ALTERNATE-SERVER option (--alternate-server options). In this case, the client must also send all requests to the same alternate-server address. You set a single system as the "front-end" of the cluster of TURN servers, and that "load banacer" system does nothing - it just returns 300 ALTERNATE-SERVER error to all clients, with an alternate server IP address, so the client will re-connect to another server. If the alternate servers are chosen in a round-robina manner, then you have	a load-balancing cluster of TURN servers. 
+    # Set a complex networking load-balancing equipment that redirects the requests to a member of the TURN servers group. It must take care about redirecting the requests to the same server from the same client - because some TURN sessions from the same client must share the information.
+    # Set a less complex scheme with round-robin DNS. The client must send all its requests to the same DNS-discovered TURN server.
+    # Use build-in balancing capability with ALTERNATE-SERVER option (--alternate-server options). In this case, the client must also send all requests to the same alternate-server address. You set a single system as the "front-end" of the cluster of TURN servers, and that "load banacer" system does nothing - it just returns 300 ALTERNATE-SERVER error to all clients, with an alternate server IP address, so the client will re-connect to another server. If the alternate servers are chosen in a round-robina manner, then you have	a load-balancing cluster of TURN servers. 
 
-  # Load balancing and optimization withing single system.
+  * ===Load balancing and optimization withing single system.===
 
 If you are using Linux kernel 3.9 or newer, and you have TURN Server 
 version 3.0.0.0 or newer, then you can skip this section. Your TURN 
@@ -75,11 +75,11 @@ complicated - but the performance will be the best possible. You can use
 ALTERNATE-SERVER mechanism to present the whole "pack" as a single "initial"
 TURN server front-end to the external world.
 
-  # High-end NICs with RSS feature (Receive-side scaling).
+  * ===High-end NICs with RSS feature (Receive-side scaling).===
 
 See also the next section.
 
-  # "Software RSS" : Receive Packet Steering (RPS).
+  * ==="Software RSS" : Receive Packet Steering (RPS).===
 
 If your network card does not support RSS, your can use an OS that emulates
 that functionality in software, for example recent versions of BSD and Linux. 
