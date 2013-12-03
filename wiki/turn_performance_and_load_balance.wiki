@@ -47,4 +47,4 @@ See also the next section.
 
 If your network card does not support RSS, your can use an OS that emulates that functionality in software, for example recent versions of BSD and Linux. Read the documentation on your OS to find out how to turn ON RSS and RPS. General description what RSS and RPS are can be found here:
 
-https://github.com/torvalds/linux/blob/master/Documentation/networking/scaling.txt
+[https://github.com/torvalds/linux/blob/master/Documentation/networking/scaling.txt Scaling in the Linux Networking Stack]
