@@ -1,9 +1,7 @@
-#summary turnserver wiki page
+#summary turnserver performance optimization wiki page
 #labels Version-3.0.2.2
 
-==turnserver application: a TURN relay server implementation==
-
-=== LOAD BALANCE ===
+==TURN relay server load balance and performance optimization==
 
 To set a load balancing scheme, you have several options:
 
