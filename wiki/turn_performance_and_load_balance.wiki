@@ -1,0 +1,14 @@
+#summary turnserver wiki page
+#labels Version-3.0.2.2
+
+==turnserver application: a TURN relay server implementation==
+
+=== LOAD BALANCE ===
+
+To set a load balancing scheme, you have several options:
+
+	# Set a complex networking load-balancing equipment that redirects the requests to a member of the TURN servers group. It must take care about redirecting the requests to the same server from the same client - because some TURN sessions from the same client must share the information.
+	# Set a less complex scheme with round-robin DNS. The same precaution must be taken as in the first case.
+	# Use build-in balancing capability with ALTERNATE-SERVER option (--alternate-server and --tls-alternate-server options). In this case, the shared information in the session will be taken care of automatically by the "master" TURN server.
+	# A good performance-enhancing option would be using a system with multiple CPUs, fast network card(s), TURN Server version 3.0 or newer and Linux kernel version 3.9 or newer (for example, Fedora or Archlinux). The new advanced network features of the Linux kernel 3.9+ allows automatic load balancing between multiple CPUs in the system. The TURN server uses those features when they are available on the system.
+	
