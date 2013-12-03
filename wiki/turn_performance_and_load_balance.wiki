@@ -63,4 +63,4 @@ Among those facilities, kqueue is probably the most advanced:
 
 [http://www.eecs.berkeley.edu/~sangjin/2012/12/21/epoll-vs-kqueue.html Scalable Event Multiplexing: epoll vs. kqueue]
 
-So with a huge number of sockets, a BSD system may be an attractive option, especially when TCP protocol performance is critical. For example, DragonFly BSD is a performance-oriented BSD variant. FreeBSD is a good choice, too.
+So with a huge number of sockets, a BSD system may be an attractive option, especially when TCP protocol performance is critical. For example, the DragonFlyBSD is a performance-oriented BSD variant. FreeBSD is a good choice, too.
