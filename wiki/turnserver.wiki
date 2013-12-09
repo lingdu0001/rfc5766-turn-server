@@ -36,7 +36,7 @@
    * *--no-stun*	Run as TURN server only, all STUN requests will be ignored. Option to suppress STUN functionality, only TURN requests will be processed.
    * *--sha256*	Require SHA256 digest function to be used for the message integrity. By default, the server accepts both SHA1 (as per TURN standard specs) and SHA256 (as an extension) functions and the server switches to SHA256 only if the client session uses it. With this option, the server always requires the stronger SHA256 function. The client application must support SHA256 hash function if this option is used. If the server obtains a message from the client with a weaker  (SHA1)  hash  function  then  the server returns error code 441.
    * *--mobility*    Mobility with ICE (MICE) specs support.
-   * *--no-cli*      Turn OFF the CLI support. By default it is always ON. See also options --cli-ip and --cli-port.				
+   * *--no-cli*      Turn OFF the CLI support. By default it is always ON. See also options *--cli-ip*, *--cli-port* and *--cli-password*.
    * *--server-relay*   Server relay. *NON-STANDARD AND DANGEROUS OPTION*. Only for an application that want to run a server on the relay endpoints. This option eliminates the IP permissions check on the packets incoming to the relay endpoints. That makes the system vulnerable to DOS attack, for example, among other bad things. The rule is: if you do not understand what is this option about and why would you need it, *then you absolutely must NOT use it under any circumstances*.
    * *-h* Help.
 
