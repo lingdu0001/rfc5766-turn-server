@@ -36,7 +36,7 @@
  *      *-l* {{{<number>}}}     Message length (Default: 100 Bytes).
  *      *-i* {{{<file-name>}}}     Certificate file (for secure connections only, optional).
  *      *-k* {{{<file-name>}}}     Private key file (for secure connections only).
- *       *-E* {{{<CA-cert-file>}}}   CA file for server certificate verification, if the server certificate to be verified.
+ *       *-E* {{{<CA-file-name>}}}   CA file for server certificate verification, if the server certificate to be verified.
  *      *-p* {{{<port>}}}     *TURN* *Server* port (Default: 3478 unsecure,	5349 secure).
  *      *-n* {{{<number>}}}     Number of	messages to send (Default: 5).
  *      *-d* {{{<device-name>}}}     Local interface device (optional, Linux only).
@@ -49,7 +49,6 @@
  *	*-w* {{{<password>}}}     STUN/TURN user password.
  *	*-W* {{{<secret>}}}     TURN REST API secret. Is not compatible with -A flag.
  *	*-C* {{{<symbol>}}}     This is the username/timestamp separator symbol (character) in TURN REST API. The default value is ':'.
-
  *       *-F* {{{<cipher-suite>}}}   Cipher suite for TLS/DTLS. Default value is DEFAULT.
 
        See the _turnutils_uclient_ usage examples	in the "examples/scripts" directory.
