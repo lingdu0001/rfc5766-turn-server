@@ -24,8 +24,12 @@ To set the turnserver parameters:
    then you have to uncomment line "TURNSERVER_ENABLED=1" in 
    the /etc/default/rfc5766-turn-server file.
    
-3) To create database schema, use schema in file 
-   /usr/share/rfc5766-turn-server/schema.sql.
+3) If you are using UFW, then run the command after the installation:
+
+   $ ufw add turnserver
+
+   You can inspect and adjust the UFW turnserver settings in the file 
+   /etc/ufw/applications.d/turnserver.
    
 4) For additional information, run:
  
@@ -34,8 +38,8 @@ To set the turnserver parameters:
    $ man turnutils
 
 5) During installation, no TURN user accounts are created.  
-rfc5766-turn-server does not recognise UNIX accounts and requires accounts 
-to be defined in it's own config file. By default, TURN server uses anonymous 
+rfc5766-turn-server does not recognize UNIX accounts and requires accounts 
+to be defined in it's own config file. By default, the TURN server uses anonymous 
 access. 
 
 Traditional STUN doesn't require an account. For TURN relay

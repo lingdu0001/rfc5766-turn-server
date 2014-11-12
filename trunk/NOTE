@@ -1,2 +1,8 @@
-This project is active in Google code: http://code.google.com/p/rfc5766-turn-server/
+This project is in maintenance mode.
+
+The stable branch see:
+
+ $ svn checkout http://rfc5766-turn-server.googlecode.com/svn/branches/v3.2/
+
+The new development see at: http://code.google.com/p/coturn/
 
